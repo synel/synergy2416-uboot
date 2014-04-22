@@ -164,7 +164,7 @@
 #define CONFIG_IPADDR           192.168.1.110
 #define CONFIG_SERVERIP         192.168.1.100
 #define CONFIG_GATEWAYIP        192.168.1.1
-#define CONFIG_BOOTARGS		"console=ttySAC0,115200n8 root=/dev/mmcblk0p2 init=/linuxrc rootwait panic=2"
+#define CONFIG_BOOTARGS		"console=ttySAC0,115200 root=/dev/mmcblk0p2 rw rootwait init=/linuxrc panic=2"
 
 #define CONFIG_EXTRA_ENV_SETTINGS                                                			\
         "mmcloaduboot=fatload mmc 0:1 c0008000 u-boot\0"                         			\
@@ -186,7 +186,7 @@
 #define CONFIG_UPDATEROOTFS  "nand erase 400000 200000 ; nand write.e c0008000 400000 200000"
 #define CONFIG_BOOTKERNEL    "nand read.e c0008000 100000 280000; bootm c0008000"
 #define CONFIG_MMCSTART      "mmcinit"
-#define CONFIG_BOOTCOMMAND      "run bootkernel"
+#define CONFIG_BOOTCOMMAND      "mmcinit; run mmcloadkernel; bootm c0008000"
 
 #define CONFIG_DRIVER_DM9000 1
 #define CONFIG_DM9000_BASE       0x08000004
