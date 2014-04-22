@@ -161,10 +161,22 @@
 
 #define CONFIG_ETHADDR          00:12:E5:00:02:06
 #define CONFIG_NETMASK          255.255.255.0
-#define CONFIG_IPADDR           192.168.0.110
-#define CONFIG_SERVERIP         192.168.0.100
-#define CONFIG_GATEWAYIP        192.168.0.1
+#define CONFIG_IPADDR           192.168.1.110
+#define CONFIG_SERVERIP         192.168.1.100
+#define CONFIG_GATEWAYIP        192.168.1.1
 #define CONFIG_BOOTARGS		"console=ttySAC0,115200n8 root=/dev/mmcblk0p2 init=/linuxrc rootwait panic=2"
+
+#define CONFIG_EXTRA_ENV_SETTINGS                                                			\
+        "mmcloaduboot=fatload mmc 0:1 c0008000 u-boot\0"                         			\
+        "updateuboot=nand erase 0  40000 ; nand write.e c0008000 0 40000\0"      			\
+        "mmcloadkernel=fatload mmc 0:1 c0008000 zImage\0"                        			\
+        "updatekernel=nand erase 100000  280000 ; nand write.e c0008000 100000 280000\0"                \
+        "mmcloadrootfs=fatload mmc 0:1 c0008000 rootfs\0"		                                \
+        "updaterootfs=nand erase 400000 200000 ; nand write.e c0008000 400000 200000\0"                 \
+        "bootkernel=nand read.e c0008000 100000 280000; bootm c0008000\0"                               \
+        "mmcstart=mmcinit\0" 										\
+        ""
+
 
 #define CONFIG_MMCLOADUBOOT "fatload mmc 0:1 c0008000 u-boot"
 #define CONFIG_UPDATEUBOOT  "nand erase 0  40000 ; nand write.e c0008000 0 40000"
