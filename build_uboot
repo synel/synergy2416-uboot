@@ -4,7 +4,7 @@ export ARCH=arm
 export CROSS_COMPILE=arm-none-linux-gnueabi-
 export PATH=/opt/arm-2009q3/bin:$PATH
 
-INSTALL_BINDIR=../../images
+INSTALL_BINDIR=/srv/tftpboot/synergy2416/images
 UBOOT_IMAGE=u-boot.bin
  
 {
@@ -17,8 +17,8 @@ clean)
     make -j$CPU_JOB_NUM mrproper
     ;;
 config)
-    echo make -j$CPU_JOB_NUM mango2450_config
-    make -j$CPU_JOB_NUM mango2450_config
+    echo make -j$CPU_JOB_NUM synergy2416_config
+    make -j$CPU_JOB_NUM synergy2416_config
     ;;
 all|*)
     echo make -j$CPU_JOB_NUM

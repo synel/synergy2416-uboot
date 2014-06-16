@@ -1,0 +1,1048 @@
+make -j9
+Generating include/autoconf.mk.dep
+fatal: No names found, cannot describe anything.
+Generating include/autoconf.mk
+for dir in tools examples api_examples ; do make -C $dir _depend ; done
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/tools'
+ln -s ../common/environment.c environment.c
+ln -s ../include/zlib.h zlib.h
+ln -s ../lib_generic/md5.c md5.c
+ln -s ../lib_generic/sha1.c sha1.c
+ln -s ../common/image.c image.c
+if [ ! -f mkimage.h ] ; then \
+			ln -s ../tools/mkimage.h mkimage.h; \
+		fi
+if [ ! -f fdt_host.h ] ; then \
+			ln -s ../tools/fdt_host.h fdt_host.h; \
+		fi
+ln -s ../lib_generic/crc32.c crc32.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/tools'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/tools'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/tools'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/examples'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/examples'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/examples'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/examples'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/api_examples'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/api_examples'
+make -C tools all
+make -C examples all
+make -C api_examples all
+make -C cpu/s3c24xx start.o
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/tools'
+gcc -Wall -pedantic -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o img2srec.o img2srec.c
+make -C lib_generic/
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/examples'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o hello_world.o hello_world.c
+gcc -g -Wall -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o mkimage.o mkimage.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/api_examples'
+make -C cpu/s3c24xx/
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o stubs.o stubs.c
+gcc -g -Wall -pedantic -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o crc32.o crc32.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/cpu/s3c24xx'
+arm-none-linux-gnueabi-ar crv libglue.a 
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/lib_generic'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/api_examples'
+gcc -g -Wall -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o image.o image.c
+make -C cpu/s3c24xx/s3c2416/
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/cpu/s3c24xx'
+arm-none-linux-gnueabi-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -c -o start.o start.S
+gcc -g -Wall -pedantic -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o md5.o md5.c
+arm-none-linux-gnueabi-ar crv libstubs.a stubs.o
+a - stubs.o
+arm-none-linux-gnueabi-ld -g  -Ttext 0xc100000 \
+			-o hello_world -e hello_world hello_world.o libstubs.a \
+			-L/opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1 -lgcc
+make -C lib_arm/
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o mmu_table.o mmu_table.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/cpu/s3c24xx/s3c2416'
+arm-none-linux-gnueabi-gcc -M -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector cpu_init.S speed.c > .depend
+make -C fs/cramfs/
+arm-none-linux-gnueabi-objcopy -O srec hello_world hello_world.srec 2>/dev/null
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/lib_arm'
+arm-none-linux-gnueabi-objcopy -O binary hello_world hello_world.bin 2>/dev/null
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand_cp.o nand_cp.c
+make -C fs/fat/
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/fs/cramfs'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/examples'
+gcc -g -Wall -pedantic -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o sha1.o sha1.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/cpu/s3c24xx/s3c2416'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/cpu/s3c24xx/s3c2416'
+arm-none-linux-gnueabi-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -c -o cpu_init.o cpu_init.S
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/fs/fat'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o i2c.o i2c.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o speed.o speed.c
+make -C fs/fdos/
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/fs/cramfs'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o serial.o serial.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/fs/fdos'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/fs/cramfs'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cramfs.o cramfs.c
+speed.c: In function 'print_cpuinfo':
+speed.c:144: warning: format '%d' expects type 'int', but argument 2 has type 'long unsigned int'
+speed.c:146: warning: format '%d' expects type 'int', but argument 2 has type 'long unsigned int'
+speed.c:146: warning: format '%d' expects type 'int', but argument 3 has type 'long unsigned int'
+speed.c:146: warning: format '%d' expects type 'int', but argument 4 has type 'long unsigned int'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/fs/fat'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/lib_arm'
+arm-none-linux-gnueabi-ar crv libs3c2416.a cpu_init.o speed.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/lib_generic'
+serial.c: In function 'serial_setbrg':
+serial.c:59: warning: implicit declaration of function 'get_PCLK'
+ln -s ../libfdt/libfdt_internal.h libfdt_internal.h
+gcc -g -Wall -pedantic -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o envcrc.o envcrc.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/lib_arm'
+arm-none-linux-gnueabi-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -c -o _ashldi3.o _ashldi3.S
+a - cpu_init.o
+a - speed.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/cpu/s3c24xx/s3c2416'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o uncompress.o uncompress.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/fs/fat'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o fat.o fat.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o usb_ohci.o usb_ohci.c
+make -C fs/jffs2/
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/lib_generic'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o bzlib.o bzlib.c
+arm-none-linux-gnueabi-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -c -o _ashrdi3.o _ashrdi3.S
+gcc -g  -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -c -o environment.o environment.c
+arm-none-linux-gnueabi-ar crv libcramfs.a cramfs.o uncompress.o
+arm-none-linux-gnueabi-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -c -o _divsi3.o _divsi3.S
+arm-none-linux-gnueabi-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -c -o _modsi3.o _modsi3.S
+gcc -g -Wall -pedantic -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o ubsha1.o ubsha1.c
+a - cramfs.o
+a - uncompress.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/fs/cramfs'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o file.o file.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o bzlib_crctable.o bzlib_crctable.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/fs/jffs2'
+fat.c: In function 'read_bootsectandvi':
+fat.c:708: warning: array subscript is above array bounds
+arm-none-linux-gnueabi-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -c -o _udivsi3.o _udivsi3.S
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o bzlib_decompress.o bzlib_decompress.c
+arm-none-linux-gnueabi-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -c -o _umodsi3.o _umodsi3.S
+gcc -g -Wall -pedantic -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o gen_eth_addr.o gen_eth_addr.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/fs/fdos'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o bzlib_randtable.o bzlib_randtable.c
+gcc -Wall -pedantic -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o bmp_logo.o bmp_logo.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/fs/fdos'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o fat.o fat.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o board.o board.c
+arm-none-linux-gnueabi-ar crv libfat.a fat.o file.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o bzlib_huffman.o bzlib_huffman.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o interrupts.o interrupts.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o vfat.o vfat.c
+a - fat.o
+a - file.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/fs/fat'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o bootm.o bootm.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o crc32.o crc32.c
+bmp_logo.c: In function ‘main’:
+bmp_logo.c:71: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result
+bmp_logo.c:73: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result
+bmp_logo.c:75: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result
+bmp_logo.c:77: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/fs/jffs2'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o dev.o dev.c
+board.c: In function 'start_armboot':
+board.c:324: warning: unused variable 's'
+gcc -Wall -pedantic -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O  -o img2srec img2srec.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/cpu/s3c24xx'
+interrupts.c: In function 'interrupt_init':
+interrupts.c:185: warning: implicit declaration of function 'get_PCLK'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cache.o cache.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/fs/jffs2'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o jffs2_1pass.o jffs2_1pass.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o fdos.o fdos.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ctype.o ctype.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/cpu/s3c24xx'
+make[1]: `start.o' is up to date.
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/cpu/s3c24xx'
+make -C fs/reiserfs/
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o div0.o div0.c
+strip img2srec
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cpu.o cpu.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o display_options.o display_options.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o fs.o fs.c
+ln -s ../libfdt/fdt.c fdt.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o compr_rtime.o compr_rtime.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand.o nand.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o div64.o div64.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o interrupts.o interrupts.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/fs/reiserfs'
+ln -s ../libfdt/fdt_ro.c fdt_ro.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o compr_rubin.o compr_rubin.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o lmb.o lmb.c
+ln -s ../libfdt/fdt_rw.c fdt_rw.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o onenand.o onenand.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o subdir.o subdir.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o compr_zlib.o compr_zlib.c
+ln -s ../libfdt/fdt_strerror.c fdt_strerror.c
+make -C fs/ext2/
+nand.c:102: warning: excess elements in array initializer
+nand.c:102: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:102: warning: excess elements in array initializer
+nand.c:102: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:102: warning: excess elements in array initializer
+nand.c:102: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:102: warning: excess elements in array initializer
+nand.c:102: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:102: warning: excess elements in array initializer
+nand.c:102: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:102: warning: excess elements in array initializer
+nand.c:102: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:102: warning: excess elements in array initializer
+nand.c:102: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:102: warning: excess elements in array initializer
+nand.c:102: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:103: warning: excess elements in array initializer
+nand.c:103: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:103: warning: excess elements in array initializer
+nand.c:103: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:103: warning: excess elements in array initializer
+nand.c:103: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:103: warning: excess elements in array initializer
+nand.c:103: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:103: warning: excess elements in array initializer
+nand.c:103: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:103: warning: excess elements in array initializer
+nand.c:103: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:103: warning: excess elements in array initializer
+nand.c:103: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:103: warning: excess elements in array initializer
+nand.c:103: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:104: warning: excess elements in array initializer
+nand.c:104: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:104: warning: excess elements in array initializer
+nand.c:104: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:104: warning: excess elements in array initializer
+nand.c:104: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:104: warning: excess elements in array initializer
+nand.c:104: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:104: warning: excess elements in array initializer
+nand.c:104: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:104: warning: excess elements in array initializer
+nand.c:104: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:104: warning: excess elements in array initializer
+nand.c:104: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:104: warning: excess elements in array initializer
+nand.c:104: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:105: warning: excess elements in array initializer
+nand.c:105: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:105: warning: excess elements in array initializer
+nand.c:105: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:105: warning: excess elements in array initializer
+nand.c:105: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:105: warning: excess elements in array initializer
+nand.c:105: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:105: warning: excess elements in array initializer
+nand.c:105: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:105: warning: excess elements in array initializer
+nand.c:105: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:105: warning: excess elements in array initializer
+nand.c:105: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:105: warning: excess elements in array initializer
+nand.c:105: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:106: warning: excess elements in array initializer
+nand.c:106: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:106: warning: excess elements in array initializer
+nand.c:106: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:106: warning: excess elements in array initializer
+nand.c:106: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:106: warning: excess elements in array initializer
+nand.c:106: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:106: warning: excess elements in array initializer
+nand.c:106: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:106: warning: excess elements in array initializer
+nand.c:106: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:106: warning: excess elements in array initializer
+nand.c:106: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:106: warning: excess elements in array initializer
+nand.c:106: warning: (near initialization for 's3c_nand_oob_128.eccpos')
+nand.c:43: warning: 's3c_nand_oob_16' defined but not used
+nand.c:54: warning: 's3c_nand_oob_64' defined but not used
+nand.c:76: warning: 's3c_nand_oob_mlc_64' defined but not used
+nand.c:90: warning: 's3c_nand_oob_128' defined but not used
+ln -s ../libfdt/fdt_wip.c fdt_wip.c
+gcc -Wall -pedantic -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -o envcrc envcrc.o crc32.o environment.o sha1.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o onenand_cp.o onenand_cp.c
+arm-none-linux-gnueabi-ar crv libarm.a _ashldi3.o _ashrdi3.o _divsi3.o _modsi3.o _udivsi3.o _umodsi3.o board.o bootm.o cache.o div0.o interrupts.o
+make -C net/
+a - _ashldi3.o
+a - _ashrdi3.o
+a - _divsi3.o
+a - _modsi3.o
+a - _udivsi3.o
+a - _umodsi3.o
+a - board.o
+a - bootm.o
+a - cache.o
+a - div0.o
+a - interrupts.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/lib_arm'
+gcc -Wall -pedantic -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -o ubsha1 ubsha1.o sha1.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o mini_inflate.o mini_inflate.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o mmc.o mmc.c
+arm-none-linux-gnueabi-ar crv libfdos.a fat.o vfat.o dev.o fdos.o fs.o subdir.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/fs/reiserfs'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/fs/ext2'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o compr_lzo.o compr_lzo.c
+make -C disk/
+a - fat.o
+a - vfat.o
+a - dev.o
+a - fdos.o
+a - fs.o
+a - subdir.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/fs/fdos'
+gcc -Wall -pedantic -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O  -o gen_eth_addr gen_eth_addr.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ldiv.o ldiv.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o usbd-ctl-fs.o usbd-ctl-fs.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/fs/reiserfs'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o reiserfs.o reiserfs.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o compr_lzari.o compr_lzari.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/net'
+mmc.c: In function 'clock_config':
+mmc.c:285: warning: implicit declaration of function 'get_PCLK'
+mmc.c:311: warning: format '%d' expects type 'int', but argument 2 has type 'long unsigned int'
+mmc.c:311: warning: format '%d' expects type 'int', but argument 3 has type 'long unsigned int'
+mmc.c: In function 'mmc_block_read':
+mmc.c:468: warning: format '%d' expects type 'int', but argument 3 has type 'ulong'
+mmc.c:468: warning: format '%d' expects type 'int', but argument 4 has type 'ulong'
+mmc.c: In function 'mmc_block_write':
+mmc.c:521: warning: format '%d' expects type 'int', but argument 2 has type 'ulong'
+mmc.c: In function 'mmc_read':
+mmc.c:579: warning: format '%08x' expects type 'unsigned int', but argument 2 has type 'ulong'
+mmc.c: In function 'mmc_write':
+mmc.c:643: warning: format '%08x' expects type 'unsigned int', but argument 3 has type 'ulong'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o sha1.o sha1.c
+mmc.c: In function 'mmc_init':
+mmc.c:740: warning: assignment from incompatible pointer type
+strip gen_eth_addr
+gcc -Wall -pedantic -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O  -o bmp_logo bmp_logo.o
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/disk'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o string.o string.c
+arm-none-linux-gnueabi-ar crv libjffs2.a jffs2_1pass.o compr_rtime.o compr_rubin.o compr_zlib.o mini_inflate.o compr_lzo.o compr_lzari.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/fs/ext2'
+mmc.c: In function 'clock_config':
+mmc.c:285: warning: 'mmc_clk' may be used uninitialized in this function
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o dev.o dev.c
+strip bmp_logo
+gcc -g -Wall -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o fdt.o fdt.c
+a - jffs2_1pass.o
+a - compr_rtime.o
+a - compr_rubin.o
+a - compr_zlib.o
+a - mini_inflate.o
+a - compr_lzo.o
+a - compr_lzari.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/fs/jffs2'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o vsprintf.o vsprintf.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/fs/ext2'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ext2fs.o ext2fs.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o mode_string.o mode_string.c
+gcc -g -Wall -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o fdt_ro.o fdt_ro.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o dev.o dev.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o usbd-ep0-fs.o usbd-ep0-fs.c
+arm-none-linux-gnueabi-ar crv libreiserfs.a reiserfs.o dev.o mode_string.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o usbd-recv-fs.o usbd-recv-fs.c
+gcc -g -Wall -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o fdt_rw.o fdt_rw.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o zlib.o zlib.c
+make -C drivers/bios_emulator/
+a - reiserfs.o
+a - dev.o
+a - mode_string.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/fs/reiserfs'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o usbd-send-fs.o usbd-send-fs.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/disk'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/net'
+gcc -g -Wall -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o fdt_strerror.o fdt_strerror.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o usbd-ctl-hs.o usbd-ctl-hs.c
+arm-none-linux-gnueabi-ar crv libext2fs.a ext2fs.o dev.o
+make -C drivers/block/
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/net'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o net.o net.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/bios_emulator'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/disk'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o part.o part.c
+a - ext2fs.o
+a - dev.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/fs/ext2'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o hs_mmc.o hs_mmc.c
+gcc -g -Wall -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O -c -o fdt_wip.o fdt_wip.c
+usbd-ctl-hs.c: In function 's3c_usb_stop':
+usbd-ctl-hs.c:139: warning: value computed is not used
+usbd-ctl-hs.c: In function 'download_start':
+usbd-ctl-hs.c:790: warning: format '%x' expects type 'unsigned int', but argument 2 has type '__u16 *'
+usbd-ctl-hs.c: In function 'udc_int_bulkout':
+usbd-ctl-hs.c:981: warning: format '%x' expects type 'unsigned int', but argument 2 has type '__u16 *'
+usbd-ctl-hs.c:987: warning: format '%x' expects type 'unsigned int', but argument 2 has type '__u16 *'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/block'
+./bmp_logo logos/denx.bmp >/home/chaol/Development/repo/synergy2416-uboot/include/bmp_logo.h
+hs_mmc.c: In function 'issue_command':
+hs_mmc.c:361: warning: format '%08lx' expects type 'long unsigned int', but argument 2 has type 'unsigned int'
+hs_mmc.c:371: warning: format '%08lx' expects type 'long unsigned int', but argument 2 has type 'unsigned int'
+hs_mmc.c: In function 'hsmmc_init':
+hs_mmc.c:1071: warning: assignment from incompatible pointer type
+hs_mmc.c:948: warning: unused variable 'reg'
+hs_mmc.c: In function 'movi_read':
+hs_mmc.c:1162: warning: large integer implicitly truncated to unsigned type
+hs_mmc.c: In function 'mmc_bread':
+hs_mmc.c:1202: warning: comparison between pointer and integer
+hs_mmc.c:1203: warning: passing argument 1 of 'virt_to_phy_smdk2416' makes integer from pointer without a cast
+hs_mmc.c:28: note: expected 'ulong' but argument is of type 'ulong *'
+hs_mmc.c:1203: warning: assignment makes pointer from integer without a cast
+hs_mmc.c: In function 'read_test':
+hs_mmc.c:1314: warning: large integer implicitly truncated to unsigned type
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o part_mac.o part_mac.c
+make -C drivers/dma/
+gcc -Wall -pedantic -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -idirafter /home/chaol/Development/repo/synergy2416-uboot/include2 -idirafter /home/chaol/Development/repo/synergy2416-uboot/include -DTEXT_BASE=0xc3e00000 -DUSE_HOSTCC -O  -o mkimage mkimage.o crc32.o image.o md5.o sha1.o fdt.o fdt_ro.o fdt_rw.o fdt_strerror.o fdt_wip.o
+strip mkimage
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o part_dos.o part_dos.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/tools'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o movi.o movi.c
+make -C drivers/hwmon/
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/dma'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o part_iso.o part_iso.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o tftp.o tftp.c
+arm-none-linux-gnueabi-ar crv libs3c24xx.a mmu_table.o nand_cp.o i2c.o serial.o usb_ohci.o interrupts.o cpu.o nand.o onenand.o onenand_cp.o mmc.o usbd-ctl-fs.o usbd-ep0-fs.o usbd-recv-fs.o usbd-send-fs.o usbd-ctl-hs.o hs_mmc.o movi.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/block'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o bootp.o bootp.c
+a - mmu_table.o
+a - nand_cp.o
+a - i2c.o
+a - serial.o
+a - usb_ohci.o
+a - interrupts.o
+a - cpu.o
+a - nand.o
+a - onenand.o
+a - onenand_cp.o
+a - mmc.o
+a - usbd-ctl-fs.o
+a - usbd-ep0-fs.o
+a - usbd-recv-fs.o
+a - usbd-send-fs.o
+a - usbd-ctl-hs.o
+a - hs_mmc.o
+a - movi.o
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/hwmon'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/cpu/s3c24xx'
+make -C drivers/i2c/
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o part_amiga.o part_amiga.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/block'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ahci.o ahci.c
+arm-none-linux-gnueabi-ar crv libhwmon.a 
+arm-none-linux-gnueabi-ar crv libgeneric.a bzlib.o bzlib_crctable.o bzlib_decompress.o bzlib_randtable.o bzlib_huffman.o crc32.o ctype.o display_options.o div64.o lmb.o ldiv.o sha1.o string.o vsprintf.o zlib.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/dma'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o rarp.o rarp.c
+a - bzlib.o
+a - bzlib_crctable.o
+a - bzlib_decompress.o
+a - bzlib_randtable.o
+a - bzlib_huffman.o
+a - crc32.o
+a - ctype.o
+a - display_options.o
+a - div64.o
+a - lmb.o
+a - ldiv.o
+a - sha1.o
+a - string.o
+a - vsprintf.o
+a - zlib.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/lib_generic'
+make -C drivers/input/
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/hwmon'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ata_piix.o ata_piix.c
+arm-none-linux-gnueabi-ar crv libdisk.a part.o part_mac.o part_dos.o part_iso.o part_amiga.o
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/i2c'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o eth.o eth.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/dma'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o MCD_tasksInit.o MCD_tasksInit.c
+a - part.o
+a - part_mac.o
+a - part_dos.o
+a - part_iso.o
+a - part_amiga.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/disk'
+make -C drivers/misc/
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/bios_emulator'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o sil680.o sil680.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/input'
+make -C drivers/mmc/
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o nfs.o nfs.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o sym53c8xx.o sym53c8xx.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/bios_emulator'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -I./include -I/home/chaol/Development/repo/synergy2416-uboot/include -D__PPC__  -D__BIG_ENDIAN__ -c -o atibios.o atibios.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o MCD_dmaApi.o MCD_dmaApi.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/misc'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o MCD_tasks.o MCD_tasks.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mmc'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o systemace.o systemace.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o sntp.o sntp.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -I./include -I/home/chaol/Development/repo/synergy2416-uboot/include -D__PPC__  -D__BIG_ENDIAN__ -c -o biosemu.o biosemu.c
+arm-none-linux-gnueabi-ar crv libmmc.a 
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/misc'
+arm-none-linux-gnueabi-ar crv libdma.a MCD_tasksInit.o MCD_dmaApi.o MCD_tasks.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mmc'
+make -C drivers/mtd/
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/i2c'
+In file included from systemace.c:43:
+/home/chaol/Development/repo/synergy2416-uboot/include/systemace.h:22: warning: #ident is a deprecated GCC extension
+a - MCD_tasksInit.o
+a - MCD_dmaApi.o
+a - MCD_tasks.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/dma'
+arm-none-linux-gnueabi-ar crv libblock.a ahci.o ata_piix.o sil680.o sym53c8xx.o systemace.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -I./include -I/home/chaol/Development/repo/synergy2416-uboot/include -D__PPC__  -D__BIG_ENDIAN__ -c -o besys.o besys.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/misc'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ali512x.o ali512x.c
+make -C drivers/mtd/nand/
+a - ahci.o
+a - ata_piix.o
+a - sil680.o
+a - sym53c8xx.o
+a - systemace.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/block'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -I./include -I/home/chaol/Development/repo/synergy2416-uboot/include -D__PPC__  -D__BIG_ENDIAN__ -c -o bios.o bios.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/i2c'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o fsl_i2c.o fsl_i2c.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ns87308.o ns87308.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/input'
+make -C drivers/mtd/nand_legacy/
+arm-none-linux-gnueabi-ar crv libnet.a net.o tftp.o bootp.o rarp.o eth.o nfs.o sntp.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o omap1510_i2c.o omap1510_i2c.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o status_led.o status_led.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd/nand'
+a - net.o
+a - tftp.o
+a - bootp.o
+a - rarp.o
+a - eth.o
+a - nfs.o
+a - sntp.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/net'
+make -C drivers/mtd/onenand/
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/input'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o i8042.o i8042.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -I./include -I/home/chaol/Development/repo/synergy2416-uboot/include -D__PPC__  -D__BIG_ENDIAN__ -c -o x86emu/decode.o x86emu/decode.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o omap24xx_i2c.o omap24xx_i2c.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd/nand_legacy'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o keyboard.o keyboard.c
+arm-none-linux-gnueabi-ar crv libmisc.a ali512x.o ns87308.o status_led.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -I./include -I/home/chaol/Development/repo/synergy2416-uboot/include -D__PPC__  -D__BIG_ENDIAN__ -c -o x86emu/ops2.o x86emu/ops2.c
+a - ali512x.o
+a - ns87308.o
+a - status_led.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/misc'
+make -C drivers/mtd/spi/
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o tsi108_i2c.o tsi108_i2c.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o pc_keyb.o pc_keyb.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd/onenand'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd/nand_legacy'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o mxc_i2c.o mxc_i2c.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o at45.o at45.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -I./include -I/home/chaol/Development/repo/synergy2416-uboot/include -D__PPC__  -D__BIG_ENDIAN__ -c -o x86emu/ops.o x86emu/ops.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd/nand_legacy'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand_legacy.o nand_legacy.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ps2ser.o ps2ser.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd/spi'
+make -C drivers/net/
+arm-none-linux-gnueabi-ar crv libspi_flash.a 
+arm-none-linux-gnueabi-ar crv libi2c.a fsl_i2c.o omap1510_i2c.o omap24xx_i2c.o tsi108_i2c.o mxc_i2c.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cfi_flash.o cfi_flash.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -I./include -I/home/chaol/Development/repo/synergy2416-uboot/include -D__PPC__  -D__BIG_ENDIAN__ -c -o x86emu/prim_ops.o x86emu/prim_ops.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ps2mult.o ps2mult.c
+arm-none-linux-gnueabi-ar crv libnand_legacy.a nand_legacy.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd/spi'
+make -C drivers/net/sk98lin/
+a - fsl_i2c.o
+a - omap1510_i2c.o
+a - omap24xx_i2c.o
+a - tsi108_i2c.o
+a - mxc_i2c.o
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/net'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/i2c'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd/onenand'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o mw_eeprom.o mw_eeprom.c
+a - nand_legacy.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd/nand_legacy'
+make -C drivers/pci/
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -I./include -I/home/chaol/Development/repo/synergy2416-uboot/include -D__PPC__  -D__BIG_ENDIAN__ -c -o x86emu/sys.o x86emu/sys.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd/nand'
+arm-none-linux-gnueabi-ar crv libinput.a i8042.o keyboard.o pc_keyb.o ps2ser.o ps2mult.o
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd/onenand'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o onenand_uboot.o onenand_uboot.c
+make -C drivers/pcmcia/
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/net/sk98lin'
+arm-none-linux-gnueabi-ar crv libmtd.a at45.o cfi_flash.o mw_eeprom.o
+a - i8042.o
+a - keyboard.o
+a - pc_keyb.o
+a - ps2ser.o
+a - ps2mult.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/input'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -I./include -I/home/chaol/Development/repo/synergy2416-uboot/include -D__PPC__  -D__BIG_ENDIAN__ -c -o x86emu/debug.o x86emu/debug.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/net'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/pci'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd/nand'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand.o nand.c
+a - at45.o
+a - cfi_flash.o
+a - mw_eeprom.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o onenand_base.o onenand_base.c
+make -C drivers/spi/
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/net'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o dm9000x.o dm9000x.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/pcmcia'
+make -C drivers/rtc/
+nand.c: In function 'nand_init':
+nand.c:70: warning: format '%lu' expects type 'long unsigned int', but argument 2 has type 'unsigned int'
+arm-none-linux-gnueabi-ar crv libatibiosemu.a atibios.o biosemu.o besys.o bios.o x86emu/decode.o x86emu/ops2.o x86emu/ops.o x86emu/prim_ops.o x86emu/sys.o x86emu/debug.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand_base.o nand_base.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/spi'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o onenand_bbt.o onenand_bbt.c
+a - atibios.o
+a - biosemu.o
+a - besys.o
+a - bios.o
+a - x86emu/decode.o
+a - x86emu/ops2.o
+a - x86emu/ops.o
+a - x86emu/prim_ops.o
+a - x86emu/sys.o
+a - x86emu/debug.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/bios_emulator'
+make -C drivers/serial/
+arm-none-linux-gnueabi-ar crv libspi.a 
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/rtc'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/spi'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand_ids.o nand_ids.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/net/sk98lin'
+arm-none-linux-gnueabi-ar crv libonenand.a onenand_uboot.o onenand_base.o onenand_bbt.o
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/serial'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/pcmcia'
+a - onenand_uboot.o
+a - onenand_base.o
+a - onenand_bbt.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd/onenand'
+make -C drivers/usb/
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/net/sk98lin'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skge.o skge.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/pci'
+arm-none-linux-gnueabi-ar crv libnet.a dm9000x.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand_ecc.o nand_ecc.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/pcmcia'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o mpc8xx_pcmcia.o mpc8xx_pcmcia.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/pci'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o fsl_pci_init.o fsl_pci_init.c
+a - dm9000x.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/net'
+make -C drivers/video/
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skaddr.o skaddr.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/usb'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skgehwt.o skgehwt.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o rpx_pcmcia.o rpx_pcmcia.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/video'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o pci.o pci.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skgeinit.o skgeinit.c
+make -C common/
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skgepnmi.o skgepnmi.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/serial'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/common'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o tqm8xx_pcmcia.o tqm8xx_pcmcia.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skgesirq.o skgesirq.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o pci_auto.o pci_auto.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/serial'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ns9750_serial.o ns9750_serial.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o ski2c.o ski2c.c
+arm-none-linux-gnueabi-ar crv libpcmcia.a mpc8xx_pcmcia.o rpx_pcmcia.o tqm8xx_pcmcia.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ns16550.o ns16550.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o sklm80.o sklm80.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o pci_indirect.o pci_indirect.c
+a - mpc8xx_pcmcia.o
+a - rpx_pcmcia.o
+a - tqm8xx_pcmcia.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/pcmcia'
+make -C libfdt/
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o serial.o serial.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skqueue.o skqueue.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skrlmt.o skrlmt.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/usb'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand_bbt.o nand_bbt.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o tsi108_pci.o tsi108_pci.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o sktimer.o sktimer.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o serial_pl010.o serial_pl010.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/libfdt'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/usb'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o isp116x-hcd.o isp116x-hcd.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o w83c553f.o w83c553f.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skvpd.o skvpd.c
+arm-none-linux-gnueabi-ar crv libfdt.a 
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skxmac2.o skxmac2.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o serial_pl011.o serial_pl011.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/libfdt'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o sl811_usb.o sl811_usb.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/video'
+make -C api/
+arm-none-linux-gnueabi-ar crv libpci.a fsl_pci_init.o pci.o pci_auto.o pci_indirect.o tsi108_pci.o w83c553f.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o skcsum.o skcsum.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/video'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ati_radeon_fb.o ati_radeon_fb.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o serial_sh.o serial_sh.c
+a - fsl_pci_init.o
+a - pci.o
+a - pci_auto.o
+a - pci_indirect.o
+a - tsi108_pci.o
+a - w83c553f.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/pci'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o uboot_skb.o uboot_skb.c
+make -C post/
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o usb_ohci.o usb_ohci.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/api'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -I. -DSK_USE_CSUM  -c -o uboot_drv.o uboot_drv.c
+arm-none-linux-gnueabi-ar crv libapi.a 
+arm-none-linux-gnueabi-ar crv libserial.a ns9750_serial.o ns16550.o serial.o serial_pl010.o serial_pl011.o serial_sh.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cfb_console.o cfb_console.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/post'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/api'
+make -C /home/chaol/Development/repo/synergy2416-uboot/board/synel/synergy2416/ u-boot.lds
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o usbdcore.o usbdcore.c
+a - ns9750_serial.o
+a - ns16550.o
+a - serial.o
+a - serial_pl010.o
+a - serial_pl011.o
+a - serial_sh.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/serial'
+(echo create libpost.a; for lib in   ; \
+	 do echo addlib $lib; done; echo save) \
+	| arm-none-linux-gnueabi-ar -M
+arm-none-linux-gnueabi-ar crv libsk98lin.a skge.o skaddr.o skgehwt.o skgeinit.o skgepnmi.o skgesirq.o ski2c.o sklm80.o skqueue.o skrlmt.o sktimer.o skvpd.o skxmac2.o skcsum.o uboot_skb.o uboot_drv.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ct69000.o ct69000.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o nand_util.o nand_util.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/post'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o mb862xx.o mb862xx.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o fsl_upm.o fsl_upm.c
+a - skge.o
+a - skaddr.o
+a - skgehwt.o
+a - skgeinit.o
+a - skgepnmi.o
+a - skgesirq.o
+a - ski2c.o
+a - sklm80.o
+a - skqueue.o
+a - skrlmt.o
+a - sktimer.o
+a - skvpd.o
+a - skxmac2.o
+a - skcsum.o
+a - uboot_skb.o
+a - uboot_drv.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/net/sk98lin'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o usbdcore_ep0.o usbdcore_ep0.c
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/board/synel/synergy2416'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o sed13806.o sed13806.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o usbdcore_mpc8xx.o usbdcore_mpc8xx.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o usbdcore_omap1510.o usbdcore_omap1510.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o sed156x.o sed156x.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o sm501.o sm501.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o smiLynxEM.o smiLynxEM.c
+arm-none-linux-gnueabi-ar crv libusb.a isp116x-hcd.o sl811_usb.o usb_ohci.o usbdcore.o usbdcore_ep0.o usbdcore_mpc8xx.o usbdcore_omap1510.o
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o videomodes.o videomodes.c
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/board/synel/synergy2416'
+arm-none-linux-gnueabi-ar crv libnand.a nand.o nand_base.o nand_ids.o nand_ecc.o nand_bbt.o nand_util.o fsl_upm.o
+a - isp116x-hcd.o
+a - sl811_usb.o
+a - usb_ohci.o
+a - usbdcore.o
+a - usbdcore_ep0.o
+a - usbdcore_mpc8xx.o
+a - usbdcore_omap1510.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/usb'
+a - nand.o
+a - nand_base.o
+a - nand_ids.o
+a - nand_ecc.o
+a - nand_bbt.o
+a - nand_util.o
+a - fsl_upm.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/mtd/nand'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/board/synel/synergy2416'
+make[1]: Nothing to be done for `u-boot.lds'.
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/board/synel/synergy2416'
+arm-none-linux-gnueabi-ar crv libvideo.a ati_radeon_fb.o cfb_console.o ct69000.o mb862xx.o sed13806.o sed156x.o sm501.o smiLynxEM.o videomodes.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/rtc'
+a - ati_radeon_fb.o
+a - cfb_console.o
+a - ct69000.o
+a - mb862xx.o
+a - sed13806.o
+a - sed156x.o
+a - sm501.o
+a - smiLynxEM.o
+a - videomodes.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/video'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/rtc'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o bfin_rtc.o bfin_rtc.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o date.o date.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds12887.o ds12887.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds1302.o ds1302.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds1306.o ds1306.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds1307.o ds1307.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds1337.o ds1337.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds1374.o ds1374.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds1556.o ds1556.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds164x.o ds164x.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds174x.o ds174x.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ds3231.o ds3231.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o m41t11.o m41t11.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o m41t60.o m41t60.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o m48t35ax.o m48t35ax.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o max6900.o max6900.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o mc146818.o mc146818.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o mcfrtc.o mcfrtc.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o mk48t59.o mk48t59.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o mpc5xxx.o mpc5xxx.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o mpc8xx.o mpc8xx.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o pcf8563.o pcf8563.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o rs5c372.o rs5c372.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o rx8025.o rx8025.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o s3c24x0_rtc.o s3c24x0_rtc.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o x1205.o x1205.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o s3c24xx_rtc.o s3c24xx_rtc.c
+arm-none-linux-gnueabi-ar crv librtc.a bfin_rtc.o date.o ds12887.o ds1302.o ds1306.o ds1307.o ds1337.o ds1374.o ds1556.o ds164x.o ds174x.o ds3231.o m41t11.o m41t60.o m48t35ax.o max6900.o mc146818.o mcfrtc.o mk48t59.o mpc5xxx.o mpc8xx.o pcf8563.o rs5c372.o rx8025.o s3c24x0_rtc.o x1205.o s3c24xx_rtc.o
+a - bfin_rtc.o
+a - date.o
+a - ds12887.o
+a - ds1302.o
+a - ds1306.o
+a - ds1307.o
+a - ds1337.o
+a - ds1374.o
+a - ds1556.o
+a - ds164x.o
+a - ds174x.o
+a - ds3231.o
+a - m41t11.o
+a - m41t60.o
+a - m48t35ax.o
+a - max6900.o
+a - mc146818.o
+a - mcfrtc.o
+a - mk48t59.o
+a - mpc5xxx.o
+a - mpc8xx.o
+a - pcf8563.o
+a - rs5c372.o
+a - rx8025.o
+a - s3c24x0_rtc.o
+a - x1205.o
+a - s3c24xx_rtc.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/drivers/rtc'
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/common'
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/common'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o main.o main.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o ACEX1K.o ACEX1K.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o altera.o altera.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o bedbug.o bedbug.c
+main.c:1065: warning: 'delete_char' defined but not used
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o circbuf.o circbuf.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_autoscript.o cmd_autoscript.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_bdinfo.o cmd_bdinfo.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o image.o image.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o gunzip.o gunzip.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_boot.o cmd_boot.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_bootm.o cmd_bootm.c
+image.c: In function 'genimg_get_format':
+image.c:643: warning: format '%x' expects type 'unsigned int', but argument 2 has type 'ulong'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_cache.o cmd_cache.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_console.o cmd_console.c
+cmd_bootm.c: In function 'do_bootm':
+cmd_bootm.c:175: warning: implicit declaration of function 'virt_to_phy_smdk2416'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_date.o cmd_date.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_eeprom.o cmd_eeprom.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_elf.o cmd_elf.c
+cmd_bootm.c:131: warning: 'hdr' may be used uninitialized in this function
+cmd_bootm.c:133: warning: 'iflag' may be used uninitialized in this function
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_ext2.o cmd_ext2.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_fat.o cmd_fat.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_fdc.o cmd_fdc.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_flash.o cmd_flash.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_itest.o cmd_itest.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_load.o cmd_load.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_mem.o cmd_mem.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_misc.o cmd_misc.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_mmc.o cmd_mmc.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_nand.o cmd_nand.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_net.o cmd_net.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_nvedit.o cmd_nvedit.c
+cmd_mmc.c: In function 'do_mmc':
+cmd_mmc.c:36: warning: implicit declaration of function 'hsmmc_set_gpio'
+cmd_mmc.c:37: warning: implicit declaration of function 'hsmmc_reset'
+cmd_mmc.c:40: warning: implicit declaration of function 'hsmmc_init'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_onenand.o cmd_onenand.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_pcmcia.o cmd_pcmcia.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_reginfo.o cmd_reginfo.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_usbd.o cmd_usbd.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_ximg.o cmd_ximg.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_vfd.o cmd_vfd.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o command.o command.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o console.o console.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cyclon2.o cyclon2.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o stratixII.o stratixII.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o devices.o devices.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o dlmalloc.o dlmalloc.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o docecc.o docecc.c
+arm-none-linux-gnueabi-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wa,--no-warn \
+		-DENV_CRC=0 \
+		-c -o environment.o environment.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_common.o env_common.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_dataflash.o env_dataflash.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_flash.o env_flash.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_eeprom.o env_eeprom.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_sf.o env_sf.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_nvram.o env_nvram.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_nowhere.o env_nowhere.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o exports.o exports.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o flash.o flash.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o fpga.o fpga.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o hush.o hush.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o kgdb.o kgdb.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o lcd.o lcd.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o lists.o lists.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o lynxkdi.o lynxkdi.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o memsize.o memsize.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o miiphybb.o miiphybb.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o miiphyutil.o miiphyutil.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o s_record.o s_record.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o serial.o serial.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o soft_i2c.o soft_i2c.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o soft_spi.o soft_spi.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o spartan2.o spartan2.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o spartan3.o spartan3.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o usb.o usb.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o usb_kbd.o usb_kbd.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o usb_storage.o usb_storage.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o virtex2.o virtex2.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o xilinx.o xilinx.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o crc16.o crc16.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o xyzModem.o xyzModem.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_mac.o cmd_mac.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o cmd_movi.o cmd_movi.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_nand.o env_nand.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_movi.o env_movi.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o env_onenand.o env_onenand.c
+xyzModem.c: In function 'xyzModem_stream_open':
+xyzModem.c:564: warning: 'dummy' is used uninitialized in this function
+arm-none-linux-gnueabi-ar crv libcommon.a main.o ACEX1K.o altera.o bedbug.o circbuf.o cmd_autoscript.o cmd_bdinfo.o image.o gunzip.o cmd_boot.o cmd_bootm.o cmd_cache.o cmd_console.o cmd_date.o cmd_eeprom.o cmd_elf.o cmd_ext2.o cmd_fat.o cmd_fdc.o cmd_flash.o cmd_itest.o cmd_load.o cmd_mem.o cmd_misc.o cmd_mmc.o cmd_nand.o cmd_net.o cmd_nvedit.o cmd_onenand.o cmd_pcmcia.o cmd_reginfo.o cmd_usbd.o cmd_ximg.o cmd_vfd.o command.o console.o cyclon2.o stratixII.o devices.o dlmalloc.o docecc.o environment.o env_common.o env_dataflash.o env_flash.o env_eeprom.o env_sf.o env_nvram.o env_nowhere.o exports.o flash.o fpga.o hush.o kgdb.o lcd.o lists.o lynxkdi.o memsize.o miiphybb.o miiphyutil.o s_record.o serial.o soft_i2c.o soft_spi.o spartan2.o spartan3.o usb.o usb_kbd.o usb_storage.o virtex2.o xilinx.o crc16.o xyzModem.o cmd_mac.o cmd_movi.o env_nand.o env_movi.o env_onenand.o
+a - main.o
+a - ACEX1K.o
+a - altera.o
+a - bedbug.o
+a - circbuf.o
+a - cmd_autoscript.o
+a - cmd_bdinfo.o
+a - image.o
+a - gunzip.o
+a - cmd_boot.o
+a - cmd_bootm.o
+a - cmd_cache.o
+a - cmd_console.o
+a - cmd_date.o
+a - cmd_eeprom.o
+a - cmd_elf.o
+a - cmd_ext2.o
+a - cmd_fat.o
+a - cmd_fdc.o
+a - cmd_flash.o
+a - cmd_itest.o
+a - cmd_load.o
+a - cmd_mem.o
+a - cmd_misc.o
+a - cmd_mmc.o
+a - cmd_nand.o
+a - cmd_net.o
+a - cmd_nvedit.o
+a - cmd_onenand.o
+a - cmd_pcmcia.o
+a - cmd_reginfo.o
+a - cmd_usbd.o
+a - cmd_ximg.o
+a - cmd_vfd.o
+a - command.o
+a - console.o
+a - cyclon2.o
+a - stratixII.o
+a - devices.o
+a - dlmalloc.o
+a - docecc.o
+a - environment.o
+a - env_common.o
+a - env_dataflash.o
+a - env_flash.o
+a - env_eeprom.o
+a - env_sf.o
+a - env_nvram.o
+a - env_nowhere.o
+a - exports.o
+a - flash.o
+a - fpga.o
+a - hush.o
+a - kgdb.o
+a - lcd.o
+a - lists.o
+a - lynxkdi.o
+a - memsize.o
+a - miiphybb.o
+a - miiphyutil.o
+a - s_record.o
+a - serial.o
+a - soft_i2c.o
+a - soft_spi.o
+a - spartan2.o
+a - spartan3.o
+a - usb.o
+a - usb_kbd.o
+a - usb_storage.o
+a - virtex2.o
+a - xilinx.o
+a - crc16.o
+a - xyzModem.o
+a - cmd_mac.o
+a - cmd_movi.o
+a - env_nand.o
+a - env_movi.o
+a - env_onenand.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/common'
+make -C board/synel/synergy2416/
+make[1]: Entering directory `/home/chaol/Development/repo/synergy2416-uboot/board/synel/synergy2416'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o synergy2416.o synergy2416.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -Wall -Wstrict-prototypes -fno-stack-protector -c -o flash.o flash.c
+arm-none-linux-gnueabi-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -mfloat-abi=soft  -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc3e00000 -I/home/chaol/Development/repo/synergy2416-uboot/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -mabi=apcs-gnu -c -o lowlevel_init.o lowlevel_init.S
+synergy2416.c: In function 'cs8900_pre_init':
+synergy2416.c:70: warning: format '%x' expects type 'unsigned int', but argument 2 has type 'long unsigned int'
+arm-none-linux-gnueabi-ar crv libsynergy2416.a synergy2416.o flash.o lowlevel_init.o
+a - synergy2416.o
+a - flash.o
+a - lowlevel_init.o
+make[1]: Leaving directory `/home/chaol/Development/repo/synergy2416-uboot/board/synel/synergy2416'
+UNDEF_SYM=`arm-none-linux-gnueabi-objdump -x board/synel/synergy2416/libsynergy2416.a lib_generic/libgeneric.a cpu/s3c24xx/libs3c24xx.a cpu/s3c24xx/s3c2416/libs3c2416.a lib_arm/libarm.a fs/cramfs/libcramfs.a fs/fat/libfat.a fs/fdos/libfdos.a fs/jffs2/libjffs2.a fs/reiserfs/libreiserfs.a fs/ext2/libext2fs.a net/libnet.a disk/libdisk.a drivers/bios_emulator/libatibiosemu.a drivers/block/libblock.a drivers/dma/libdma.a drivers/hwmon/libhwmon.a drivers/i2c/libi2c.a drivers/input/libinput.a drivers/misc/libmisc.a drivers/mmc/libmmc.a drivers/mtd/libmtd.a drivers/mtd/nand/libnand.a drivers/mtd/nand_legacy/libnand_legacy.a drivers/mtd/onenand/libonenand.a drivers/mtd/spi/libspi_flash.a drivers/net/libnet.a drivers/net/sk98lin/libsk98lin.a drivers/pci/libpci.a drivers/pcmcia/libpcmcia.a drivers/spi/libspi.a drivers/rtc/librtc.a drivers/serial/libserial.a drivers/usb/libusb.a drivers/video/libvideo.a common/libcommon.a libfdt/libfdt.a api/libapi.a post/libpost.a | \
+		sed  -n -e 's/.*\(__u_boot_cmd_.*\)/-u\1/p'|sort|uniq`;\
+		cd /home/chaol/Development/repo/synergy2416-uboot && arm-none-linux-gnueabi-ld -Bstatic -T /home/chaol/Development/repo/synergy2416-uboot/board/synel/synergy2416/u-boot.lds  -Ttext 0xc3e00000 $UNDEF_SYM cpu/s3c24xx/start.o \
+			--start-group lib_generic/libgeneric.a cpu/s3c24xx/libs3c24xx.a cpu/s3c24xx/s3c2416/libs3c2416.a lib_arm/libarm.a fs/cramfs/libcramfs.a fs/fat/libfat.a fs/fdos/libfdos.a fs/jffs2/libjffs2.a fs/reiserfs/libreiserfs.a fs/ext2/libext2fs.a net/libnet.a disk/libdisk.a drivers/bios_emulator/libatibiosemu.a drivers/block/libblock.a drivers/dma/libdma.a drivers/hwmon/libhwmon.a drivers/i2c/libi2c.a drivers/input/libinput.a drivers/misc/libmisc.a drivers/mmc/libmmc.a drivers/mtd/libmtd.a drivers/mtd/nand/libnand.a drivers/mtd/nand_legacy/libnand_legacy.a drivers/mtd/onenand/libonenand.a drivers/mtd/spi/libspi_flash.a drivers/net/libnet.a drivers/net/sk98lin/libsk98lin.a drivers/pci/libpci.a drivers/pcmcia/libpcmcia.a drivers/spi/libspi.a drivers/rtc/librtc.a drivers/serial/libserial.a drivers/usb/libusb.a drivers/video/libvideo.a common/libcommon.a libfdt/libfdt.a api/libapi.a post/libpost.a board/synel/synergy2416/libsynergy2416.a --end-group -L /opt/arm-2009q3/bin/../lib/gcc/arm-none-linux-gnueabi/4.4.1/armv4t -lgcc \
+			-Map u-boot.map -o u-boot
+arm-none-linux-gnueabi-objcopy --gap-fill=0xff -O srec u-boot u-boot.srec
+arm-none-linux-gnueabi-objcopy --gap-fill=0xff -O binary u-boot u-boot.bin
+cp -a u-boot.bin /srv/tftpboot/synergy2416/images/u-boot.bin
+cp: cannot create regular file `../../sdwriter/u-boot.bin': No such file or directory
+Total compile time is 0 minutes 10 seconds
