@@ -92,6 +92,28 @@ int board_init(void)
 
 	cs8900_pre_init();
 	usb_pre_init();
+	GPACON_REG = GPACON_REG & (~(0x1<<13));   //GPA13 OUT   0 or 1 ? 
+	GPACON_REG = GPACON_REG & (~(0x1<<14));   //GPA14 OUT   0 or 1 ? 
+	GPACON_REG = GPACON_REG & (~(0x1<<15));   //GPA15 OUT   0 or 1 ? 
+	GPACON_REG = GPACON_REG & (~(0x1<<16));   //GPA16 OUT   0 or 1 ? 
+	GPACON_REG = GPACON_REG & (~(0x1<<23));   //GPA23 OUT   0 or 1 ? 
+	GPACON_REG = GPACON_REG & (~(0x1<<24));   //GPA24 OUT   0 or 1 ? 
+
+	GPBCON_REG = (GPBCON_REG & (~(0xff<<0))) + 0x55;  //GPB0.1.2.3 out  0 or 1?
+	GPBCON_REG = (GPBCON_REG & (~(0x3<<10))) + (0x01<<10); //GPB5 out 0 or 1?
+	GPBCON_REG = (GPBCON_REG & (~(0x3<<12))) ; //GPB6
+	GPBCON_REG = (GPBCON_REG & (~(0x3<<18))) + (0x01<<18); //GPB9 out 0 or 1?
+	GPBCON_REG = (GPBCON_REG & (~(0x3<<20))) + (0x01<<20); //GPB10 out
+
+
+	GPCCON_REG = (GPCCON_REG & (~(0x3<<0))) + 0x01;   //GPC0 out  0 or 1?
+
+	GPFCON_REG = (GPFCON_REG & (~(0x3<<0)));   //GPF0 in
+      
+	GPKCON_REG = (GPKCON_REG & (~(0xff<<24))) + (0x55<<24); //GPK12 14 out 13.15 in
+	GPKCON_REG = (GPKCON_REG & (~(0x03<<18))) + (0x01<<18); //GPK9  out 
+
+	GPKDAT_REG = (GPKDAT_REG | (0xf<<12)); 
 
 	gd->bd->bi_arch_number = MACH_TYPE;
 	gd->bd->bi_boot_params = (PHYS_SDRAM_1+0x100);
