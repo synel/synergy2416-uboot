@@ -30,13 +30,28 @@
  * High Level Configuration Options
  * (easy to change)
  */
+#define CONFIG_SPLASH_SCREEN  1
+#define CONFIG_SILENT_CONSOLE 1
+#define CFG_DEVICE_NULLDEV    1
+#define CONFIG_SILENT_CONSOLE_UPDATE_ON_SET
+#define CFG_CONSOLE_IS_IN_ENV 1
+#define CFG_CONSOLE_INFO_QUIET 1
+#define CFG_BOOTM_PROGESS_QUIET 1
+#define CONFIG_AUTOBOOT_KEYED  1
+#define CONFIG_AUTOBOOT_PROMPT \
+	"autoboot in %d seconds\n",bootdelay
+#define CONFIG_AUTOBOOT_DELAY_STR "d"
+#define CONFIG_AUTOBOOT_STOP_STR  "q"
+#define CONFIG_BOOT_RETRY_TIME 9999
+#define CONFIG_RESET_TO_RETRY
 #define CONFIG_S3C2416		1		/* in a SAMSUNG S3C2416 SoC     */
 #define CONFIG_S3C24XX		1		/* in a SAMSUNG S3C24XX Family  */
 #define CONFIG_SMDK2416		1		/* on a SAMSUNG SMDK2416 Board  */
+//#define CONFIG_LCD
 
 #define MEMORY_BASE_ADDRESS	0x30000000
 #define MEMORY_BASE_ADDRESS_1	0x38000000
-#define CONFIG_PRINTK
+#undef CONFIG_PRINTK
 
 /* input clock of PLL */
 #define CONFIG_SYS_CLK_FREQ	12000000	/* the SMDK2416 has 12MHz input clock */
@@ -140,6 +155,7 @@
 /***********************************************************
  * Command definition
  ***********************************************************/
+//#define CONFIG_CMD_BMP
 #define CONFIG_CMD_CACHE
 #define CONFIG_CMD_USB
 #define CONFIG_CMD_REGINFO
@@ -148,8 +164,8 @@
 #define CONFIG_CMD_PING
 #define CONFIG_CMD_DATE
 #define CONFIG_CMD_EXT2
-//#define CONFIG_COMMANDS 1
-//#define CFG_CMD_NAND 1
+#define CONFIG_COMMANDS 1
+#define CFG_CMD_NAND 1
 #define CONFIG_CMD_FAT
 #define CONFIG_CMD_MMC
 
@@ -159,12 +175,12 @@
 #define CONFIG_CMD_DHCP
 #define CONFIG_CMD_NET
 
-#define CONFIG_ETHADDR          00:12:E5:00:02:06
+#define CONFIG_ETHADDR          00:12:E5:00:00:01
 #define CONFIG_NETMASK          255.255.255.0
 #define CONFIG_IPADDR           192.168.1.110
 #define CONFIG_SERVERIP         192.168.1.100
 #define CONFIG_GATEWAYIP        192.168.1.1
-#define CONFIG_BOOTARGS		"console=ttySAC0,115200 root=/dev/mmcblk0p2 rw rootwait init=/linuxrc panic=2"
+#define CONFIG_BOOTARGS		"console=fb0 root=/dev/mmcblk0p2 rw rootwait init=/linuxrc panic=2"
 
 #define CONFIG_EXTRA_ENV_SETTINGS                                                			\
         "mmcloaduboot=fatload mmc 0:1 c0008000 u-boot\0"                         			\
@@ -175,6 +191,7 @@
         "updaterootfs=nand erase 400000 200000 ; nand write.e c0008000 400000 200000\0"                 \
         "bootkernel=nand read.e c0008000 100000 280000; bootm c0008000\0"                               \
         "mmcstart=mmcinit\0" 										\
+        "silent=1\0" 										\
         ""
 
 
@@ -194,7 +211,7 @@
 #define DM9000_DATA (CONFIG_DM9000_BASE + 4)
 #define CONFIG_DM9000_USE_16BIT     
 
-#define CONFIG_BOOTDELAY	1
+#define CONFIG_BOOTDELAY	3
 #define CONFIG_ZERO_BOOTDELAY_CHECK
 
 #if defined(CONFIG_CMD_KGDB)
