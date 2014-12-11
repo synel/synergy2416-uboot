@@ -72,7 +72,7 @@ static int do_imls (cmd_tbl_t *cmdtp, int flag, int argc, char *argv[]);
 static void print_type (image_header_t *hdr);
 
 #ifdef CONFIG_SILENT_CONSOLE
-static void fixup_silent_linux (void);
+//static void fixup_silent_linux (void);
 #endif
 
 static image_header_t *image_get_kernel (ulong img_addr, int verify);
@@ -366,7 +366,7 @@ after_header_check:
 	default:			/* handled by (original) Linux case */
 	case IH_OS_LINUX:
 #ifdef CONFIG_SILENT_CONSOLE
-	    fixup_silent_linux();
+	    //fixup_silent_linux();
 #endif
 	    do_bootm_linux (cmdtp, flag, argc, argv, &images);
 	    break;

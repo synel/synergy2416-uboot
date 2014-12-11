@@ -180,7 +180,7 @@
 #define CONFIG_IPADDR           192.168.1.110
 #define CONFIG_SERVERIP         192.168.1.100
 #define CONFIG_GATEWAYIP        192.168.1.1
-#define CONFIG_BOOTARGS		"console=fb0 root=/dev/mmcblk0p2 rw rootwait init=/linuxrc panic=2"
+#define CONFIG_BOOTARGS		"console=ttySAC2,38400 root=/dev/mmcblk0p2 rw rootwait init=/linuxrc panic=2"
 
 #define CONFIG_EXTRA_ENV_SETTINGS                                                			\
         "mmcloaduboot=fatload mmc 0:1 c0008000 u-boot\0"                         			\
