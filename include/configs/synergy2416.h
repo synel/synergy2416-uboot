@@ -30,6 +30,8 @@
  * High Level Configuration Options
  * (easy to change)
  */
+#define U_BOOT_VERSION "U-Boot 1.3.4"
+#define CONFIG_VERSION_VARIABLE
 #define CONFIG_SPLASH_SCREEN  1
 #define CONFIG_SILENT_CONSOLE 1
 #define CFG_DEVICE_NULLDEV    1
@@ -343,7 +345,7 @@
  * SYNERGY2416 board specific data
  */
 
-#define CONFIG_IDENT_STRING	" for SYNERGY2416"
+#define CONFIG_IDENT_STRING	"for SYNERGY2416"
 
 /* total memory required by uboot */
 #define CFG_UBOOT_SIZE		(2*1024*1024)
