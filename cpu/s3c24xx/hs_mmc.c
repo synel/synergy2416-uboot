@@ -1051,7 +1051,7 @@ int hsmmc_init (void)
 	display_card_info();
 
 	/* Operating Clock setting */
-	clock_config(SD_EPLL, 2);	// Divisor 1 = Base clk /2      ,Divisor 2 = Base clk /4, Divisor 4 = Base clk /8 ...
+	clock_config(SD_EPLL, 8);	// Divisor 1 = Base clk /2      ,Divisor 2 = Base clk /4, Divisor 4 = Base clk /8 ...
 
 	while (set_bus_width(width));
 	while (!check_card_status());
