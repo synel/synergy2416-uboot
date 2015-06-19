@@ -48,7 +48,8 @@
 #define CONFIG_RESET_TO_RETRY
 #define CONFIG_S3C2416		1		/* in a SAMSUNG S3C2416 SoC     */
 #define CONFIG_S3C24XX		1		/* in a SAMSUNG S3C24XX Family  */
-#define CONFIG_SMDK2416		1		/* on a SAMSUNG SMDK2416 Board  */
+//#define CONFIG_SMDK2416		1		/* on a SAMSUNG SMDK2416 Board  */
+#define CONFIG_SYNERGY2		1		/* on a SAMSUNG SMDK2416 Board  */
 //#define CONFIG_LCD
 
 #define MEMORY_BASE_ADDRESS	0x30000000

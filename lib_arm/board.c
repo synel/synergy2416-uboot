@@ -435,7 +435,7 @@ void start_armboot (void)
 #endif
 	}
 /* samsung socs: no auto-detect devices */
-#elif defined(CONFIG_SMDK6400) || defined(CONFIG_SMDK2450) || defined(CONFIG_SMDK2416)
+#elif defined(CONFIG_SMDK6400) || defined(CONFIG_SMDK2450) || defined(CONFIG_SMDK2416) || defined(CONFIG_SYNERGY2)
 
 #if defined(CONFIG_NAND)
 	puts("NAND:    ");
@@ -458,14 +458,14 @@ void start_armboot (void)
 		movi_init();
 	}
 
-#if defined(CONFIG_SMDK2416)
+#if defined(CONFIG_SMDK2416) || defined(CONFIG_SYNERGY2)
 	printf("After SD/MMC boot\n");
 #endif
 
 #endif //CONFIG_BOOT_MOVINAND
 
 /* others */
-#else  //defined(CONFIG_SMDK6400) || defined(CONFIG_SMDK2450) || defined(CONFIG_SMDK2416)
+#else  //defined(CONFIG_SMDK6400) || defined(CONFIG_SMDK2450) || defined(CONFIG_SMDK2416) || defined(CONFIG_SYNERGY2)
 
 #if defined(CONFIG_CMD_NAND)
 	puts ("NAND:    ");

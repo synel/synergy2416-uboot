@@ -1,6 +1,6 @@
 #include <common.h>
 
-#if defined(CONFIG_SMDK2450) || defined(CONFIG_SMDK2416)
+#if defined(CONFIG_SMDK2450) || defined(CONFIG_SMDK2416) || defined(CONFIG_SYNERGY2)
 
 #define CONFIG_SUPPORT_MMC_PLUS
 #define HCLK_OPERATION
@@ -24,7 +24,7 @@
 
 #if defined(CONFIG_SMDK2450)
 extern ulong virt_to_phy_smdk2450(ulong addr);
-#elif defined(CONFIG_SMDK2416)
+#elif defined(CONFIG_SMDK2416) || defined(CONFIG_SYNERGY2)
 extern ulong virt_to_phy_smdk2416(ulong addr);
 #endif
 

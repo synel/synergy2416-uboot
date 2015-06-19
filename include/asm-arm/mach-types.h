@@ -4166,6 +4166,7 @@ extern unsigned int __machine_arch_type;
 #define MACH_TYPE_BLUESKY              4215
 #define MACH_TYPE_NGROUTER             4216
 #define MACH_TYPE_MX53_DENETIM         4217
+#define MACH_TYPE_SYNERGY2             4751
 
 #ifdef CONFIG_ARCH_EBSA110
 # ifdef machine_arch_type
@@ -41977,6 +41978,18 @@ extern unsigned int __machine_arch_type;
 # define machine_is_synergy()	(machine_arch_type == MACH_TYPE_SYNERGY)
 #else
 # define machine_is_synergy()	(0)
+#endif
+
+#ifdef CONFIG_MACH_SYNERGY2
+# ifdef machine_arch_type
+#  undef machine_arch_type
+#  define machine_arch_type	__machine_arch_type
+# else
+#  define machine_arch_type	MACH_TYPE_SYNERGY2
+# endif
+# define machine_is_synergy2()	(machine_arch_type == MACH_TYPE_SYNERGY2)
+#else
+# define machine_is_synergy2()	(0)
 #endif
 
 #ifdef CONFIG_MACH_ICS_IF_VOIP
