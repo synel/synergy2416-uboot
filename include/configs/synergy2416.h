@@ -186,16 +186,16 @@
 #define CONFIG_BOOTARGS		"console=ttySAC2,38400 root=/dev/mmcblk0p2 rw rootwait init=/linuxrc panic=2"
 
 #define CONFIG_EXTRA_ENV_SETTINGS                                                			\
-        "mmcloaduboot=fatload mmc 0:1 c0008000 u-boot\0"                         			\
-        "updateuboot=nand erase 0  40000 ; nand write.e c0008000 0 40000\0"      			\
-        "mmcloadkernel=fatload mmc 0:1 c0008000 zImage\0"                        			\
-        "updatekernel=nand erase 100000  280000 ; nand write.e c0008000 100000 280000\0"                \
-        "mmcloadrootfs=fatload mmc 0:1 c0008000 rootfs\0"		                                \
-        "updaterootfs=nand erase 400000 200000 ; nand write.e c0008000 400000 200000\0"                 \
-        "bootkernel=nand read.e c0008000 100000 280000; bootm c0008000\0"                               \
-        "mmcstart=mmcinit\0" 										\
-        "silent=1\0" 										\
-        ""
+	"mmcloaduboot=fatload mmc 0:1 c0008000 u-boot\0"                         			\
+"updateuboot=nand erase 0  40000 ; nand write.e c0008000 0 40000\0"      			\
+"mmcloadkernel=fatload mmc 0:1 c0008000 zImage\0"                        			\
+"updatekernel=nand erase 100000  280000 ; nand write.e c0008000 100000 280000\0"                \
+"mmcloadrootfs=fatload mmc 0:1 c0008000 rootfs\0"		                                \
+"updaterootfs=nand erase 400000 200000 ; nand write.e c0008000 400000 200000\0"                 \
+"bootkernel=nand read.e c0008000 100000 280000; bootm c0008000\0"                               \
+"mmcstart=mmcinit\0" 										\
+"silent=1\0" 										\
+""
 
 
 #define CONFIG_MMCLOADUBOOT "fatload mmc 0:1 c0008000 u-boot"
@@ -304,7 +304,7 @@
  */
 
 #define CONFIG_SDRAM_AUTO_DETECT
-						/* Memoery Type mSDRAM or mDDR */
+/* Memoery Type mSDRAM or mDDR */
 #define CFG_BANK_CFG_VAL	0x0004920d
 #define CFG_BANK_CON1_VAL	0x04000040
 #define CFG_BANK_CFG_VAL_ALT	0x00048904
