@@ -48,8 +48,8 @@
 #define CONFIG_RESET_TO_RETRY
 #define CONFIG_S3C2416		1		/* in a SAMSUNG S3C2416 SoC     */
 #define CONFIG_S3C24XX		1		/* in a SAMSUNG S3C24XX Family  */
-//#define CONFIG_SMDK2416		1		/* on a SAMSUNG SMDK2416 Board  */
-#define CONFIG_SYNERGY2		1		/* on a SYNEL SYNERGY2416 Board  */
+#define CONFIG_SMDK2416		1		/* on a SAMSUNG SMDK2416 Board  */
+//#define CONFIG_SYNERGY2		1		/* on a SYNEL SYNERGY2416 Board  */
 //#define CONFIG_LCD
 
 #define MEMORY_BASE_ADDRESS	0x30000000
@@ -95,7 +95,7 @@
 /*
  * Architecture magic and machine type
  */
-#define MACH_TYPE		4751
+#define MACH_TYPE		1685
 #define UBOOT_MAGIC		(0x43090000 | MACH_TYPE)
 
 /* Power Management is enabled */
