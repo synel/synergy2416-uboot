@@ -92,6 +92,13 @@ int board_init(void)
 
 	cs8900_pre_init();
 	usb_pre_init();
+//sxq 15.1.26 
+//3G模块开关控制口         GPA24 ，拉低产生低脉冲，拉高产生高脉冲,   默认高
+//网卡复位控制口          GPA23 ，拉低延迟200ms再拉高,             默认高
+//摄像头电源控制口         GPB3，拉高有效，                        默认高
+//4V电源控制口             GPB10 ，拉低有效，4V输出，拉高禁止,      默认低
+//卡头二电源控制口         GPC0，拉高有效                          默认高
+//GPA禁作为输出口，    赋值0
 	GPACON_REG = GPACON_REG & (~(0x1<<13));   //GPA13 OUT   0 or 1 ? 
 	GPACON_REG = GPACON_REG & (~(0x1<<14));   //GPA14 OUT   0 or 1 ? 
 	GPACON_REG = GPACON_REG & (~(0x1<<15));   //GPA15 OUT   0 or 1 ? 
@@ -99,20 +106,35 @@ int board_init(void)
 	GPACON_REG = GPACON_REG & (~(0x1<<23));   //GPA23 OUT   0 or 1 ? 
 	GPACON_REG = GPACON_REG & (~(0x1<<24));   //GPA24 OUT   0 or 1 ? 
 
+	GPADAT_REG = (GPADAT_REG & (~(0x1<<24)))+ (0x01<<24); //GPA24 out 1
+
+#if 1 //sxq 14.12.8
+	GPADAT_REG = (GPADAT_REG & (~(0x1<<23))); //GPA23 out 0
+	delay(200000);
+	GPADAT_REG = (GPADAT_REG & (~(0x1<<23))) + (0x01<<23); //GPA23 out 1
+#endif	
 	GPBCON_REG = (GPBCON_REG & (~(0xff<<0))) + 0x55;  //GPB0.1.2.3 out  0 or 1?
+	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<1))) + (0x01<<1); //GPB1 out 0 or 1
+	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<2))) + (0x01<<2); //GPB2 out 0 or 1
+	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<3))) + (0x01<<3); //GPB3 out 0 or 1
+
 	GPBCON_REG = (GPBCON_REG & (~(0x3<<10))) + (0x01<<10); //GPB5 out 0 or 1?
 	GPBCON_REG = (GPBCON_REG & (~(0x3<<12))) ; //GPB6
 	GPBCON_REG = (GPBCON_REG & (~(0x3<<18))) + (0x01<<18); //GPB9 out 0 or 1?
 	GPBCON_REG = (GPBCON_REG & (~(0x3<<20))) + (0x01<<20); //GPB10 out
+	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<10))); //GPB10 out 0 or 1
 
 
-	GPCCON_REG = (GPCCON_REG & (~(0x3<<0))) + 0x01;   //GPC0 out  0 or 1?
+	GPCCON_REG = (GPCCON_REG & (~(0x3<<0))) + (0x01<<0);   //GPC0 out  0 or 1?
+	GPCDAT_REG = (GPCDAT_REG & (~(0x1<<0))) + (0x01<<0); //GPC0 out 0 or 1
 
 	GPFCON_REG = (GPFCON_REG & (~(0x3<<0)));   //GPF0 in
       
 	GPKCON_REG = (GPKCON_REG & (~(0xff<<24))) + (0x55<<24); //GPK12 14 out 13.15 in
 	GPKCON_REG = (GPKCON_REG & (~(0x03<<18))) + (0x01<<18); //GPK9  out 
 
+//k  sxq 2015.4.26 usb 
+	GPKDAT_REG = (GPKDAT_REG & (~(0x1<<9)))+ (0x01<<9); //GPk9 out 0 or 1
 	GPKDAT_REG = (GPKDAT_REG | (0xf<<12)); 
 
 	gd->bd->bi_arch_number = MACH_TYPE;
