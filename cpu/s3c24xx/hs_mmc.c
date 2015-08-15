@@ -4,7 +4,7 @@
 
 #define CONFIG_SUPPORT_MMC_PLUS
 #define HCLK_OPERATION
-#undef DEBUG_HSMMC
+#define DEBUG_HSMMC
 #ifdef DEBUG_HSMMC
 #define dbg(x...)       printf(x)
 #else
@@ -1051,14 +1051,25 @@ int hsmmc_init (void)
 	display_card_info();
 
 	/* Operating Clock setting */
-	clock_config(SD_EPLL, 8);	// Divisor 1 = Base clk /2      ,Divisor 2 = Base clk /4, Divisor 4 = Base clk /8 ...
-
-	while (set_bus_width(width));
-	while (!check_card_status());
+	clock_config(SD_EPLL, 128);	// Divisor 1 = Base clk /2      ,Divisor 2 = Base clk /4, Divisor 4 = Base clk /8 ...
+	dbg("%s %d\n", __func__,__LINE__);
+	int result = 1;
+	result = set_bus_width(width);
+	while (result)
+	{
+		dbg("%d %s %d\n", result, __func__,__LINE__);
+		result = set_bus_width(width);
+		//reset_cpu(0);
+	}
+	while (!check_card_status()){
+		dbg("%s %d\n", __func__,__LINE__);
+	}
 
 	/* MMC_SET_BLOCKLEN */
-	while (!issue_command(MMC_SET_BLOCKLEN, 512, 0, MMC_RSP_R1));
-
+	while (!issue_command(MMC_SET_BLOCKLEN, 512, 0, MMC_RSP_R1)){
+		dbg("%s %d\n", __func__,__LINE__);
+	}
+	dbg("%s %d\n", __func__,__LINE__);
 	s3c_hsmmc_writew(0xffff, HM_NORINTSTS);
 	
 	mmc_dev.if_type = IF_TYPE_MMC;
