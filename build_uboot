@@ -1,10 +1,10 @@
 #!/bin/sh
 
-export ARCH=arm
+export ARCH=armv5t
 export CROSS_COMPILE=arm-none-linux-gnueabi-
-export PATH=/opt/arm-2009q3/bin:$PATH
+export PATH=/opt/arm-2010q1/bin:$PATH
 
-INSTALL_BINDIR=/srv/tftpboot/synergy2416/images
+INSTALL_BINDIR=/tftpboot/synergy2416/images
 UBOOT_IMAGE=u-boot.bin
  
 {
@@ -32,7 +32,7 @@ all|*)
     if [ $INSTALL_BINDIR ] ; then
         echo cp -a $UBOOT_IMAGE $INSTALL_BINDIR/$UBOOT_IMAGE
         cp -a $UBOOT_IMAGE $INSTALL_BINDIR/$UBOOT_IMAGE
-	cp -f $UBOOT_IMAGE   ../../sdwriter/u-boot.bin
+	#cp -f $UBOOT_IMAGE   ../../sdwriter/u-boot.bin
     fi
     ;;
 esac

@@ -141,7 +141,7 @@ ifeq ($(ARCH),ppc)
 CROSS_COMPILE = ppc_8xx-
 endif
 ifeq ($(ARCH),arm)
-CROSS_COMPILE = /opt/EABI-Compiler/arm-2011.09/bin/arm-none-linux-gnueabi-
+CROSS_COMPILE = arm-none-linux-gnueabi-
 endif
 ifeq ($(ARCH),i386)
 CROSS_COMPILE = i386-linux-
