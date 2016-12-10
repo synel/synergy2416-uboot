@@ -117,12 +117,13 @@ int board_init(void)
 	GPBCON_REG = (GPBCON_REG & (~(0xff<<0))) + 0x55;  //GPB0.1.2.3 out  0 or 1?
 	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<1))) + (0x01<<1); //GPB1 out 0 or 1
 	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<2))) + (0x01<<2); //GPB2 out 0 or 1
-
+#if 1 //LC 16.12.09
 	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<3))) + (0x01<<3); //GPB3 out 1, power up the SD card.
-	delay(100000);
+	delay(10000000);
 	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<3))); //GPB3 out 0, power down the SD card.
-	delay(200000);
+	delay(20000000);
 	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<3))) + (0x01<<3); //GPB3 out 1, power up the SD card.
+#endif
 
 	GPBCON_REG = (GPBCON_REG & (~(0x3<<10))) + (0x01<<10); //GPB5 out 0 or 1?
 	GPBCON_REG = (GPBCON_REG & (~(0x3<<12))) ; //GPB6
