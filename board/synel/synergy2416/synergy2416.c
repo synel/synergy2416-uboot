@@ -96,6 +96,7 @@ int board_init(void)
 //3G模块开关控制口         GPA24 ，拉低产生低脉冲，拉高产生高脉冲,   默认高
 //网卡复位控制口          GPA23 ，拉低延迟200ms再拉高,             默认高
 //摄像头电源控制口         GPB3，拉高有效，                        默认高
+//Now GPB3 is being modified to control power to the SD card. (20161209)
 //4V电源控制口             GPB10 ，拉低有效，4V输出，拉高禁止,      默认低
 //卡头二电源控制口         GPC0，拉高有效                          默认高
 //GPA禁作为输出口，    赋值0
@@ -116,7 +117,12 @@ int board_init(void)
 	GPBCON_REG = (GPBCON_REG & (~(0xff<<0))) + 0x55;  //GPB0.1.2.3 out  0 or 1?
 	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<1))) + (0x01<<1); //GPB1 out 0 or 1
 	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<2))) + (0x01<<2); //GPB2 out 0 or 1
-	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<3))) + (0x01<<3); //GPB3 out 0 or 1
+
+	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<3))) + (0x01<<3); //GPB3 out 1, power up the SD card.
+	delay(100000);
+	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<3))); //GPB3 out 0, power down the SD card.
+	delay(200000);
+	GPBDAT_REG = (GPBDAT_REG & (~(0x1<<3))) + (0x01<<3); //GPB3 out 1, power up the SD card.
 
 	GPBCON_REG = (GPBCON_REG & (~(0x3<<10))) + (0x01<<10); //GPB5 out 0 or 1?
 	GPBCON_REG = (GPBCON_REG & (~(0x3<<12))) ; //GPB6
