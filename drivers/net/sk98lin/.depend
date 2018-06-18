@@ -1,0 +1,93 @@
+skge.o: skge.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+skaddr.o: skaddr.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+skgehwt.o: skgehwt.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+skgeinit.o: skgeinit.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+skgepnmi.o: skgepnmi.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+skgesirq.o: skgesirq.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+ski2c.o: ski2c.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+sklm80.o: sklm80.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+skqueue.o: skqueue.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+skrlmt.o: skrlmt.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+sktimer.o: sktimer.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+skvpd.o: skvpd.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+skxmac2.o: skxmac2.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+skcsum.o: skcsum.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+uboot_skb.o: uboot_skb.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h
+uboot_drv.o: uboot_drv.c \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/common.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/configs/synergy2416.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/config_cmd_default.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/linux/bitops.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/bitops.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/linux/types.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/linux/config.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/linux/posix_types.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/linux/stddef.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/posix_types.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/types.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/linux/string.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/string.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/ptrace.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/proc/ptrace.h \
+ /opt/Linux-3.2.69/synergy2416-buildroot-20160801/output/host/opt/ext-toolchain/lib/gcc/arm-none-linux-gnueabi/4.8.3/include/stdarg.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/part.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/ide.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/flash.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/image.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/byteorder.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/linux/byteorder/little_endian.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/linux/byteorder/swab.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/linux/byteorder/generic.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/command.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/lmb.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/u-boot.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/global_data.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/mach-types.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/setup.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/u-boot-arm.h
