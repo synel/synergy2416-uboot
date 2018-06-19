@@ -268,8 +268,8 @@ int nand_erase_opts(nand_info_t *meminfo, const nand_erase_options_t *opts)
 	return 0;
 }
 
-#define MAX_PAGE_SIZE	2048
-#define MAX_OOB_SIZE	64
+#define MAX_PAGE_SIZE	4096
+#define MAX_OOB_SIZE	218
 
 /*
  * buffer array used for writing data
@@ -355,6 +355,7 @@ int nand_write_opts(nand_info_t *meminfo, const nand_write_options_t *opts)
 	u_char *buffer = opts->buffer;
 	size_t written;
 	int result;
+
 	/* jsgood */
 	struct mtd_oob_ops oob_ops;
 
@@ -374,7 +375,8 @@ int nand_write_opts(nand_info_t *meminfo, const nand_write_options_t *opts)
 	/* make sure device page sizes are valid */
 	if (!(meminfo->oobsize == 16 && meminfo->writesize == 512)
 	    && !(meminfo->oobsize == 8 && meminfo->writesize == 256)
-	    && !(meminfo->oobsize == 64 && meminfo->writesize == 2048)) {
+	    && !(meminfo->oobsize == 64 && meminfo->writesize == 2048)
+            && !((meminfo->oobsize == 128 || meminfo->oobsize == 218) && meminfo->writesize == 4096)) {
 		printf("Unknown flash (not normal NAND)\n");
 		return -1;
 	}
@@ -492,7 +494,7 @@ int nand_write_opts(nand_info_t *meminfo, const nand_write_options_t *opts)
 					/ opts->blockalign;
 			} while (offs < blockstart + erasesize_blockalign);
 		}
- 
+
 		readlen = meminfo->writesize;
 		if (opts->pad && (imglen < readlen)) {
 			readlen = imglen;
@@ -623,7 +625,8 @@ int nand_read_opts(nand_info_t *meminfo, const nand_read_options_t *opts)
 	/* make sure device page sizes are valid */
 	if (!(meminfo->oobsize == 16 && meminfo->writesize == 512)
 	    && !(meminfo->oobsize == 8 && meminfo->writesize == 256)
-	    && !(meminfo->oobsize == 64 && meminfo->writesize == 2048)) {
+	    && !(meminfo->oobsize == 64 && meminfo->writesize == 2048)
+            && !((meminfo->oobsize == 128 || meminfo->oobsize == 218) && meminfo->writesize == 4096)) {
 		printf("Unknown flash (not normal NAND)\n");
 		return -1;
 	}
@@ -701,7 +704,9 @@ int nand_read_opts(nand_info_t *meminfo, const nand_read_options_t *opts)
 		if (result != 0) {
 			printf("reading NAND page at offset 0x%lx failed\n",
 			       mtdoffset);
-			return -1;
+//edit 2013-10-18 lx
+//			return -1;
+//end edit
 		}
 
 		if (imglen < readlen) {
@@ -759,9 +764,12 @@ int nand_read_opts(nand_info_t *meminfo, const nand_read_options_t *opts)
 			 */
 			if (percent != percent_complete) {
 			if (!opts->quiet)
+
+#ifdef  CONFIG_PRINTK
 				printf("\rReading data from 0x%lx "
 				       "-- %3d%% complete.",
 				       mtdoffset, percent);
+#endif
 				percent_complete = percent;
 			}
 		}

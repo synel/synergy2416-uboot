@@ -99,7 +99,7 @@
 /*
  * select serial console configuration
  */
-#define CONFIG_SERIAL2		1	/* we use SERIAL 1 on SMDK2416 */
+#define CONFIG_SERIAL1		1	/* we use SERIAL 1 on SMDK2416 */
 
 #define CFG_HUSH_PARSER			/* use "hush" command parser	*/
 #ifdef CFG_HUSH_PARSER
@@ -161,7 +161,7 @@
 #define CONFIG_GATEWAYIP        192.168.30.1
 
 #define CONFIG_DRIVER_SMC911X
-#define CONFIG_DRIVER_SMC911X_BASE      0x28000000
+#define CONFIG_DRIVER_SMC911X_BASE      0x08000000
 #define CONFIG_DRIVER_SMC911X_16_BIT
 
 #define CONFIG_BOOTDELAY	3

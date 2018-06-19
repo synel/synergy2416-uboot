@@ -18,7 +18,10 @@
 #define KERN_DEBUG
 
 #define kmalloc(size, flags)	malloc(size)
+#define kzalloc(size, flags)	calloc(size, 1)
+#define vmalloc(size)		malloc(size)
 #define kfree(ptr)		free(ptr)
+#define vfree(ptr)		free(ptr)
 
 /*
  * ..and if you can't take the strict

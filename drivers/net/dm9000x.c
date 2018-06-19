@@ -71,7 +71,7 @@ TODO: Homerun NIC and longrun NIC are not functional, only internal at the
 #define DM9801_NOISE_FLOOR	0x08
 #define DM9802_NOISE_FLOOR	0x05
 
-/* #define CONFIG_DM9000_DEBUG */
+//#define CONFIG_DM9000_DEBUG 
 
 #ifdef CONFIG_DM9000_DEBUG
 #define DM9000_DBG(fmt,args...) printf(fmt, ##args)
@@ -284,6 +284,14 @@ set_PHY_mode(void)
 		phy_write(4, phy_reg4);	/* Set PHY media mode */
 		phy_write(0, phy_reg0);	/*  Tmp */
 	}
+#if 0
+	/* change mode to 10 MB Full Duplex */
+	phy_reg4 = 0x41;
+	phy_reg0 = 0x1100;
+	phy_write(4, phy_reg4);	/* Set PHY media mode */
+	phy_write(0, phy_reg0);	/*  Tmp */
+#endif
+
 	DM9000_iow(DM9000_GPCR, 0x01);	/* Let GPIO0 output */
 	DM9000_iow(DM9000_GPR, 0x00);	/* Enable PHY */
 }
@@ -382,7 +390,7 @@ dm9000_reset(void)
 
 	do {
 		DM9000_DBG("resetting the DM9000, 1st reset\n");
-		udelay(25); /* Wait at least 20 us */
+		udelay(25); /* Wait at least 20 us *///by sxq 14.6.10
 	} while (DM9000_ior(DM9000_NCR) & 1);
 
 	DM9000_iow(DM9000_NCR, 0);
@@ -390,7 +398,7 @@ dm9000_reset(void)
 
 	do {
 		DM9000_DBG("resetting the DM9000, 2nd reset\n");
-		udelay(25); /* Wait at least 20 us */
+		udelay(25); /* Wait at least 20 us *///by sxq 14.6.10
 	} while (DM9000_ior(DM9000_NCR) & 1);
 
 	/* Check whether the ethernet controller is present */
@@ -454,10 +462,46 @@ eth_init(bd_t * bd)
 	/* Set PHY */
 	set_PHY_mode();
 
+// comment by yangshuo
+#if 0	
 	/* Program operating register, only intern phy supported by now */
 	DM9000_iow(DM9000_NCR, 0x0);
 	/* TX Polling clear */
 	DM9000_iow(DM9000_TCR, 0);
+	/* Less 3Kb, 200us */
+	DM9000_iow(DM9000_BPTR, 0x3f);
+	//DM9000_iow(DM9000_BPTR, 0x37);	//add by yangshuo
+	/* Flow Control : High/Low Water */
+	DM9000_iow(DM9000_FCTR, FCTR_HWOT(3) | FCTR_LWOT(8));
+	//DM9000_iow(DM9000_FCTR, 0x38);	//flow control, add by yangshuo
+	/* SH FIXME: This looks strange! Flow Control */
+	DM9000_iow(DM9000_FCR, 0x0);
+	/* Special Mode */
+	DM9000_iow(DM9000_SMCR, 0);
+	/* clear TX status */
+	DM9000_iow(DM9000_NSR, NSR_WAKEST | NSR_TX2END | NSR_TX1END);
+	//DM9000_iow(DM9000_NSR, 0x2c);	//add by yangshuo
+	/* Clear interrupt status */
+	DM9000_iow(DM9000_ISR, 0x0f);
+#endif
+	/* Program operating register */
+//	DM9000_iow(DM9000_TCR, 0);         /* TX Polling clear */
+//	DM9000_iow(DM9000_BPTR, 0x3f); /* Less 3Kb, 200us */
+//	DM9000_iow(DM9000_FCR, 0xff);  /* Flow Control */
+//	DM9000_iow(DM9000_SMCR, 0);        /* Special Mode */
+	/* clear TX status */
+//	DM9000_iow(DM9000_NSR, NSR_WAKEST | NSR_TX2END | NSR_TX1END);
+//	DM9000_iow(DM9000_ISR, 1<<3 | 1<<2 | 1<<1 | 1<<0); /* Clear interrupt status */
+
+	/* Activate DM9000 */
+	//DM9000_iow(DM9000_RCR, RCR_DIS_LONG | RCR_DIS_CRC | RCR_RXEN);
+	/* Enable TX/RX interrupt mask */
+	//DM9000_iow(DM9000_IMR, IMR_PAR | IMR_PTM | IMR_PRM);
+
+	/* Program operating register, only internal phy supported */
+	DM9000_iow(DM9000_NCR, 0x0);
+	/* TX Polling clear */
+	DM9000_iow(DM9000_TCR, 0); 
 	/* Less 3Kb, 200us */
 	DM9000_iow(DM9000_BPTR, 0x3f);
 	/* Flow Control : High/Low Water */
@@ -465,7 +509,7 @@ eth_init(bd_t * bd)
 	/* SH FIXME: This looks strange! Flow Control */
 	DM9000_iow(DM9000_FCR, 0x0);
 	/* Special Mode */
-	DM9000_iow(DM9000_SMCR, 0);
+	DM9000_iow(DM9000_SMCR, 0); 
 	/* clear TX status */
 	DM9000_iow(DM9000_NSR, NSR_WAKEST | NSR_TX2END | NSR_TX1END);
 	/* Clear interrupt status */
@@ -508,8 +552,8 @@ eth_init(bd_t * bd)
 	/* RX enable */
 	DM9000_iow(DM9000_RCR, RCR_DIS_LONG | RCR_DIS_CRC | RCR_RXEN);
 	/* Enable TX/RX interrupt mask */
-	DM9000_iow(DM9000_IMR, IMR_PAR);
-
+//	DM9000_iow(DM9000_IMR, IMR_PAR | IMR_PTM | IMR_PRM);
+	DM9000_iow(DM9000_IMR, IMR_PAR);//by sxq 14.6.10
 	i = 0;
 	while (!(phy_read(1) & 0x20)) {	/* autonegation complete bit */
 		udelay(1000);
@@ -595,7 +639,7 @@ eth_halt(void)
 {
 	DM9000_DBG("eth_halt\n");
 
-	/* RESET devie */
+	/* RESET devie *///by sxq 14.6.10
 	phy_write(0, 0x8000);	/* PHY RESET */
 	DM9000_iow(DM9000_GPR, 0x01);	/* Power-Down PHY */
 	DM9000_iow(DM9000_IMR, 0x80);	/* Disable all interrupt */
@@ -621,11 +665,18 @@ eth_rx(void)
 
 	/* There is _at least_ 1 package in the fifo, read them all */
 	for (;;) {
+		/* reset rxsram to 0xc00 */
+		//u16 temp;	//add by yangshuo
+		//temp = DM9000_ior(DM9000_MRRH);	//add by yangshuo
+		//temp = DM9000_ior(DM9000_MRRL);	//add by yangshuo
+		//printf("reset the rxsram to 0xc00.\n");	//add by yangshuo
+
 		DM9000_ior(DM9000_MRCMDX);	/* Dummy read */
 
 		/* Get most updated data,
 		   only look at bits 0:1, See application notes DM9000 */
 		rxbyte = DM9000_inb(DM9000_DATA) & 0x03;
+		//printf("rxbyte = %d\n", rxbyte);
 
 		/* Status check: this byte must be 0 or 1 */
 		if (rxbyte > DM9000_PKT_RDY) {
@@ -645,6 +696,11 @@ eth_rx(void)
 		(db->rx_status)(&RxStatus, &RxLen);
 
 		DM9000_DBG("rx status: 0x%04x rx len: %d\n", RxStatus, RxLen);
+
+//#ifdef CONFIG_DM9000_USE_16BIT
+//		tmplen = (RxLen + 1) / 2;
+//		for (i = 0; i < tmplen; i++)
+//		((u16 *) rdptr)[i] = DM9000_inw(DM9000_DATA);
 
 		/* Move data from DM9000 */
 		/* Read received packet from RX SRAM */

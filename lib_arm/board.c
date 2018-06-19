@@ -147,19 +147,19 @@ char *strmhz(char *buf, long hz)
  * May be supplied by boards if desired
  */
 void inline __coloured_LED_init (void) {}
-void coloured_LED_init (void) __attribute__((weak, alias("__coloured_LED_init")));
+void inline coloured_LED_init (void) __attribute__((weak, alias("__coloured_LED_init")));
 void inline __red_LED_on (void) {}
-void red_LED_on (void) __attribute__((weak, alias("__red_LED_on")));
+void inline red_LED_on (void) __attribute__((weak, alias("__red_LED_on")));
 void inline __red_LED_off(void) {}
-void red_LED_off(void)	     __attribute__((weak, alias("__red_LED_off")));
+void inline red_LED_off(void)	     __attribute__((weak, alias("__red_LED_off")));
 void inline __green_LED_on(void) {}
-void green_LED_on(void) __attribute__((weak, alias("__green_LED_on")));
+void inline green_LED_on(void) __attribute__((weak, alias("__green_LED_on")));
 void inline __green_LED_off(void) {}
-void green_LED_off(void)__attribute__((weak, alias("__green_LED_off")));
+void inline green_LED_off(void)__attribute__((weak, alias("__green_LED_off")));
 void inline __yellow_LED_on(void) {}
-void yellow_LED_on(void)__attribute__((weak, alias("__yellow_LED_on")));
+void inline yellow_LED_on(void)__attribute__((weak, alias("__yellow_LED_on")));
 void inline __yellow_LED_off(void) {}
-void yellow_LED_off(void)__attribute__((weak, alias("__yellow_LED_off")));
+void inline yellow_LED_off(void)__attribute__((weak, alias("__yellow_LED_off")));
 
 /************************************************************************
  * Init Utilities							*
@@ -182,9 +182,11 @@ static int init_baudrate (void)
 
 static int display_banner (void)
 {
+#ifdef CONFIG_PRINTK
 	printf ("\n\n%s\n\n", version_string);
 	debug ("U-Boot code: %08lX -> %08lX  BSS: -> %08lX\n",
 	       _armboot_start, _bss_start, _bss_end);
+#endif	
 #ifdef CONFIG_MEMORY_UPPER_CODE /* by scsuh */
 	debug("\t\bMalloc and Stack is above the U-Boot Code.\n");
 #else
@@ -225,9 +227,10 @@ static int display_dram_config (void)
 	for (i=0; i<CONFIG_NR_DRAM_BANKS; i++) {
 		size += gd->bd->bi_dram[i].size;
 	}
-
+#ifdef CONFIG_PRINTK
 	puts("DRAM:    ");
 	print_size(size, "\n");
+#endif	
 #endif
 
 	return (0);
@@ -236,8 +239,10 @@ static int display_dram_config (void)
 #ifndef CFG_NO_FLASH
 static void display_flash_config (ulong size)
 {
+#ifdef CONFIG_PRINTK
 	puts ("Flash:  ");
 	print_size (size, "\n");
+#endif	
 }
 #endif /* CFG_NO_FLASH */
 
@@ -424,7 +429,9 @@ void start_armboot (void)
 		onenand_init();
 		/*setenv("bootcmd", "onenand read c0008000 80000 380000;bootm c0008000");*/
 	} else {
+
 		puts("NAND:    ");
+
 		nand_init();
 
 #if !defined(CONFIG_SMDKC100)
@@ -434,11 +441,14 @@ void start_armboot (void)
 			setenv("bootcmd", "nand read c0008000 80000 380000;bootm c0008000");
 #endif
 	}
+
 /* samsung socs: no auto-detect devices */
-#elif defined(CONFIG_SMDK6400) || defined(CONFIG_SMDK2450) || defined(CONFIG_SMDK2416) || defined(CONFIG_SYNERGY2)
+#elif defined(CONFIG_SMDK6400) || defined(CONFIG_SMDK2450) || defined(CONFIG_SMDK2416)
 
 #if defined(CONFIG_NAND)
+#ifdef CONFIG_PRINTK	
 	puts("NAND:    ");
+#endif
 	nand_init();		/* go init the NAND */
 #endif //CONFIG_NAND
 
@@ -458,14 +468,14 @@ void start_armboot (void)
 		movi_init();
 	}
 
-#if defined(CONFIG_SMDK2416) || defined(CONFIG_SYNERGY2)
+#if defined(CONFIG_SMDK2416)
 	printf("After SD/MMC boot\n");
 #endif
 
 #endif //CONFIG_BOOT_MOVINAND
 
 /* others */
-#else  //defined(CONFIG_SMDK6400) || defined(CONFIG_SMDK2450) || defined(CONFIG_SMDK2416) || defined(CONFIG_SYNERGY2)
+#else  //defined(CONFIG_SMDK6400) || defined(CONFIG_SMDK2450) || defined(CONFIG_SMDK2416)
 
 #if defined(CONFIG_CMD_NAND)
 	puts ("NAND:    ");
@@ -482,7 +492,6 @@ void start_armboot (void)
 	/* initialize environment */
 	env_relocate ();
 
-
 #ifdef CONFIG_VFD
 	/* must do this after the framebuffer is allocated */
 	drv_vfd_init();
@@ -491,6 +500,7 @@ void start_armboot (void)
 #ifdef CONFIG_SERIAL_MULTI
 	serial_initialize();
 #endif
+
 	/* IP Address */
 	gd->bd->bi_ip_addr = getenv_IPaddr ("ipaddr");
 
@@ -522,8 +532,8 @@ void start_armboot (void)
 #endif
 	}
 
-
 	devices_init ();	/* get the devices list going. */
+
 #ifdef CONFIG_CMC_PU2
 	load_sernum_ethaddr ();
 #endif /* CONFIG_CMC_PU2 */
@@ -547,9 +557,29 @@ extern void dm644x_eth_set_mac_addr (const u_int8_t *addr);
 		dm644x_eth_set_mac_addr(gd->bd->bi_enetaddr);
 	}
 #endif
-	printf("ETH test 1\n");
 
-	printf("ETH test 2\n");
+#ifdef CONFIG_DRIVER_CS8900
+	cs8900_get_enetaddr (gd->bd->bi_enetaddr);
+#endif
+#ifdef CONFIG_DRIVER_SMC911X
+	smx911x_handle_mac_address(gd->bd);
+#endif
+#if defined(CONFIG_DRIVER_SMC91111) || defined (CONFIG_DRIVER_LAN91C96)
+	if (getenv ("ethaddr")) {
+		smc_set_mac_addr(gd->bd->bi_enetaddr);
+	}
+#endif /* CONFIG_DRIVER_SMC91111 || CONFIG_DRIVER_LAN91C96 */
+
+	/* Initialize from environment */
+	if ((s = getenv ("loadaddr")) != NULL) {
+		load_addr = simple_strtoul (s, NULL, 16);
+	}
+#if defined(CONFIG_CMD_NET)
+	if ((s = getenv ("bootfile")) != NULL) {
+		copy_filename (BootFile, s, sizeof (BootFile));
+	}
+#endif
+
 #ifdef BOARD_LATE_INIT
 	board_late_init ();
 #endif

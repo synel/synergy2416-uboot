@@ -886,7 +886,8 @@ typedef enum {
 /*
  * SD/MMC Interface (chapter 27)
  */
-#define ELFIN_SDI_BASE		0x5a000000
+//#define ELFIN_SDI_BASE		0x5a000000
+#define ELFIN_SDI_BASE		0x4a000000
 
 #define SDICON		(ELFIN_SDI_BASE+0x00)	/* SDI Control */
 #define SDIPRE		(ELFIN_SDI_BASE+0x04)	/* SDI baud rate prescaler */

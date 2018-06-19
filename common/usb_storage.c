@@ -62,7 +62,7 @@
 
 #ifdef CONFIG_USB_STORAGE
 
-#undef USB_STOR_DEBUG
+#define USB_STOR_DEBUG
 #undef BBB_COMDAT_TRACE
 #undef BBB_XPORT_TRACE
 

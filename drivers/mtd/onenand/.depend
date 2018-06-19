@@ -30,7 +30,12 @@ onenand_uboot.o: onenand_uboot.c \
  /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/global_data.h \
  /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/mach-types.h \
  /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/setup.h \
- /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/u-boot-arm.h
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/asm/u-boot-arm.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/linux/mtd/compat.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/linux/mtd/mtd.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/linux/mtd/mtd-abi.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/linux/mtd/onenand.h \
+ /home/will/Linux-Dev/workspace/u-boot-2416/include/linux/mtd/onenand_regs.h
 onenand_base.o: onenand_base.c \
  /home/will/Linux-Dev/workspace/u-boot-2416/include/common.h \
  /home/will/Linux-Dev/workspace/u-boot-2416/include/config.h \

@@ -60,7 +60,7 @@
 
 #define min_t(type,x,y) ({ type __x = (x); type __y = (y); __x < __y ? __x: __y; })
 
-#undef DEBUG_USB_OHCI
+#define DEBUG_USB_OHCI
 #ifdef DEBUG_USB_OHCI
 #define dbg(format, arg...) printf("DEBUG: " format "\n", ## arg)
 #else

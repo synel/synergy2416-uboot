@@ -57,7 +57,7 @@
 #include <asm/4xx_pci.h>
 #endif
 
-#undef USB_DEBUG
+#define USB_DEBUG
 
 #ifdef	USB_DEBUG
 #define	USB_PRINTF(fmt,args...)	printf (fmt ,##args)
@@ -72,6 +72,7 @@ static int dev_index;
 static int running;
 static int asynch_allowed;
 static struct devrequest setup_packet;
+static int hub_port_reset(struct usb_device *dev, int port,unsigned short *portstat);
 
 char usb_started; /* flag for the started/stopped USB status */
 
@@ -877,7 +878,7 @@ void usb_scan_devices(void)
  * Probes device for being a hub and configurate it
  */
 
-#undef	USB_HUB_DEBUG
+#define	USB_HUB_DEBUG
 
 #ifdef	USB_HUB_DEBUG
 #define	USB_HUB_PRINTF(fmt,args...)	printf (fmt ,##args)
