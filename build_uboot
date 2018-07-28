@@ -1,8 +1,8 @@
 #!/bin/sh
-
+TOOLCHAINPATH=/opt/arm-2014.05/bin
 export ARCH=armv5t
-export CROSS_COMPILE=arm-none-linux-gnueabi-
-export PATH=/opt/arm-2010q1/bin:$PATH
+#export CROSS_COMPILE=arm-none-linux-gnueabi-
+export CROSS_COMPILE=${TOOLCHAINPATH}/arm-none-linux-gnueabi-
 
 INSTALL_BINDIR=/tftpboot/synergy2416/images
 UBOOT_IMAGE=u-boot.bin
@@ -15,6 +15,7 @@ case "$1" in
 clean)
     echo make -j$CPU_JOB_NUM mrproper
     make -j$CPU_JOB_NUM mrproper
+    rm *.out	
     ;;
 config)
     echo make -j$CPU_JOB_NUM synergy2416_config
@@ -22,7 +23,7 @@ config)
     ;;
 all|*)
     echo make -j$CPU_JOB_NUM
-    make -j$CPU_JOB_NUM
+    make CROSS_COMPILE=${CROSS_COMPILE} -j$CPU_JOB_NUM
     if [ $? != 0 ] ; then
 	    exit 1
     fi
