@@ -193,12 +193,17 @@
 
 #define CONFIG_EXTRA_ENV_SETTINGS                                                			\
         "mmcloaduboot=fatload mmc 0:1 c0008000 u-boot\0"                         			\
-        "updateuboot=nand erase 0  40000 ; nand write.e c0008000 0 40000\0"      			\
-        "mmcloadkernel=fatload mmc 0:1 c0008000 zImage\0"                        			\
-        "updatekernel=nand erase 44000  3C8E00 ; nand write.e c0008000 44000  3C8E00\0"                \
         "mmcloadrootfs=fatload mmc 0:1 c0008000 rootfs\0"		                                \
-        "updaterootfs=nand erase 400000 7BB0000 ; nand write.e c0008000 400000 7BB0000\0"                 \
-        "bootkernel=nand read.e c0008000 44000 400000; bootm c0008000\0"                               \
+        "updateuboot=nand erase 0 40000 ; nand write.e c0008000 0 40000\0"      			\
+        "updatekernel=nand erase 100000  300000 ; nand write.e c0008000 100000 300000\0"                \
+        "updaterootfs=nand erase 300000 200000 ; nand write.e c0008000 300000 10000000\0"                 \
+        "mmcloadkernel=fatload mmc 0:1 c0008000 zImage\0"                        			\
+        "bootargsSD=console=ttySAC0,115200 root=/dev/mmcblk0p2 rw rootwait init=/linuxrc panic=2\0"                        			\
+        "bootargsNAND=console=ttySAC0,115200 rootfstype=ubifs root=ubi0:root ubi.mtd=2 rootdelay=5 init=/linuxrc panic=2\0"                        			\
+        "bootcmdNAND=run bootkernel; reset\0"                        			\
+        "bootcmdSD=mmcinit; run mmcloadkernel; bootm c0008000; reset\0"                        			\
+        "bootkernel=nand read c0008000 100000 300000; bootm c0008000\0"                               \
+        "bootcmd=run bootkernel; run bootcmdSD;\0"                               \
         "mmcstart=mmcinit\0" 										\
         "silent=1\0" 										\
         ""
@@ -207,12 +212,12 @@
 #define CONFIG_MMCLOADUBOOT "fatload mmc 0:1 c0008000 u-boot"
 #define CONFIG_UPDATEUBOOT  "nand erase 0  40000 ; nand write.e c0008000 0 40000"
 #define CONFIG_MMCLOADKERNEL "fatload mmc 0:1 c0008000 zImage"
-#define CONFIG_UPDATEKERNEL  "nand erase 44000  3C8E00 ; nand write.e c0008000 44000  3C8E00"
+#define CONFIG_UPDATEKERNEL  "nand erase 100000  300000 ; nand write.e c0008000 100000 300000"
 #define CONFIG_MMCLOADROOTFS "fatload mmc 0:1 c0008000 rootfs"
-#define CONFIG_UPDATEROOTFS  "nand erase 400000 7BB0000 ; nand write.e c0008000 400000 7BB0000"
-#define CONFIG_BOOTKERNEL    "nand read.e c0008000 44000 400000; bootm c0008000"
+#define CONFIG_UPDATEROOTFS  "nand erase 300000 200000 ; nand write.e c0008000 300000 10000000"
+#define CONFIG_BOOTKERNEL    "nand read c0008000 100000 300000; bootm c0008000"
 #define CONFIG_MMCSTART      "mmcinit"
-#define CONFIG_BOOTCOMMAND      "mmcinit; run mmcloadkernel; bootm c0008000"
+#define CONFIG_BOOTCOMMAND      "run bootkernel; run bootcmdSD;"
 
 #define CONFIG_DRIVER_DM9000 1
 #define CONFIG_DM9000_BASE       0x08000004
